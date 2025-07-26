@@ -3,3 +3,5 @@ __pycache__/
 data/raw/
 *.mp4
 .vscode/
+# Modelos de PyTorch
+*.pt
