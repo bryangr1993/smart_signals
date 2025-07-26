@@ -1,0 +1,5 @@
+__pycache__/
+.venv/
+data/raw/
+*.mp4
+.vscode/
