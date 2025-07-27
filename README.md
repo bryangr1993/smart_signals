@@ -9,16 +9,6 @@
 | Herramienta | Versión mínima | Enlace |
 | ----------- | -------------- | ------ |
 |             |                |        |
-
-|   |
-| - |
-
-|   |
-| - |
-
-|   |
-| - |
-
 | **Git**     | 2.40        | [https://git-scm.com](https://git-scm.com) |
 | ----------- | ----------- | ------------------------------------------ |
 | **Git LFS** | 3.4         | [https://git-lfs.com](https://git-lfs.com) |
