@@ -1,0 +1,19 @@
+CAMBIA A DIRECTORIO Y ACTIVA ENTORNO VIRTUAL
+cd ~/Documents/smart_signals      # entra al proyecto
+source .venv/Scripts/activate     # activa el entorno virtual
+
+EJECUCIÓN MAIN
+
+python main.py \
+  --video data/raw/traffic_lima.mp4 \
+  --roi   config/roi.json \
+  --model yolov8n.pt \
+  --tracker config/bytetrack.yaml \
+  --imgsz 640 \
+  --skip 2 \
+  --area_min 500 \
+  --min_hits 3 \
+  --max_miss 12 \
+  --output output/counts.csv \
+  --debug \
+  --show_conf
