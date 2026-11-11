@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#111819">
+  <title>Smart Signals · Conteo vehicular</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23e5ef79'/%3E%3Cpath%20d='M10%2012l-3%208m12-13-7%2018m13-13-3%208'%20fill='none'%20stroke='%23242a0c'%20stroke-width='2.6'%20stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#main" aria-label="Smart Signals, inicio">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>Smart Signals</strong><small>DIPI-089 · ESPOCH</small></span>
+      </a>
+      <div class="topbar-actions">
+        <span id="connection" class="connection" data-tone="neutral" role="status"><span class="status-dot"></span><span id="connection-label">Conectando</span></span>
+        <button class="button button-icon" id="theme-toggle" type="button" aria-label="Activar tema claro" title="Activar tema claro"><span id="theme-icon" aria-hidden="true">☼</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="shell" tabindex="-1">
+    <div class="page-title">
+      <div><h1>Conteo vehicular</h1><p>Vehículos presentes en un acceso.</p></div>
+      <span class="session-badge" id="session-badge" data-tone="neutral"><span class="status-dot"></span><span id="session-label">Sin corrida activa</span></span>
+    </div>
+
+    <nav class="step-nav" aria-label="Etapas de trabajo">
+      <button type="button" data-step="source" aria-current="step">Fuente</button>
+      <button type="button" data-step="zone">Zona</button>
+      <button type="button" data-step="operation">Operación</button>
+      <button type="button" data-step="results">Resultados</button>
+    </nav>
+    <div id="notice" class="notice" role="status" hidden></div>
+
+    <div id="workbench" class="workbench">
+      <section class="card viewer-card" aria-labelledby="viewer-heading">
+        <div class="card-heading viewer-heading-row">
+          <div><h2 id="viewer-heading">Vista de la fuente</h2><p id="viewer-caption">Selecciona un video o conecta una cámara.</p></div>
+          <span class="tag" id="viewer-tag" hidden></span>
+        </div>
+        <div class="viewport" id="viewport">
+          <div class="view-surface" id="view-surface">
+            <img id="preview-image" alt="Cuadro de la fuente seleccionada" hidden>
+            <canvas id="roi-canvas" tabindex="0" aria-label="Editor del polígono" aria-describedby="roi-instructions" hidden></canvas>
+            <div class="empty-view" id="empty-view">
+              <span class="view-target" aria-hidden="true"><i></i></span>
+              <strong id="empty-title">Sin vista previa</strong>
+              <span id="empty-detail">El primer cuadro de la fuente aparecerá aquí.</span>
+            </div>
+          </div>
+        </div>
+        <div id="viewer-foot" class="viewer-foot"><span id="video-info">Fuente pendiente</span><span id="frame-info"></span></div>
+      </section>
+
+      <aside class="card inspector" aria-label="Controles de la etapa">
+        <section id="panel-source">
+          <div class="card-heading"><h2>Fuente de video</h2><p>Abre un video guardado o una transmisión.</p></div>
+          <div class="panel-body">
+            <div class="source-modes" role="group" aria-label="Tipo de fuente">
+              <button type="button" data-mode="library" aria-pressed="true">Biblioteca</button>
+              <button type="button" data-mode="address" aria-pressed="false">Ruta o cámara</button>
+              <button type="button" data-mode="upload" aria-pressed="false">Subir video</button>
+            </div>
+            <form id="source-form" novalidate>
+              <p class="muted" id="source-lock" hidden>Detén la corrida activa para abrir otra fuente.</p>
+              <div id="source-library" class="field">
+                <label for="library-select">Video disponible</label>
+                <select id="library-select"><option value="">Buscando videos…</option></select>
+              </div>
+              <div id="source-address" class="field" hidden>
+                <label for="source-input">Ruta de archivo o URL de cámara</label>
+                <input type="text" id="source-input" placeholder="Ej. C:\Videos\piloto.mp4 o rtsp://…" spellcheck="false" autocomplete="off" aria-describedby="address-hint">
+                <small id="address-hint">Usa una ruta del equipo, una URL RTSP o 0 para la cámara integrada.</small>
+              </div>
+              <div id="source-upload" class="field" hidden>
+                <label for="file-input">Selecciona el archivo</label>
+                <input type="file" id="file-input" accept="video/*,.mp4,.mov,.mkv,.avi,.webm,.m4v">
+                <small>El archivo se copia al equipo que ejecuta la aplicación.</small>
+              </div>
+              <button id="preview-button" type="submit" class="button primary button-wide">Abrir vista previa <span aria-hidden="true">↗</span></button>
+            </form>
+            <div class="panel-separator" id="profile-control" hidden>
+              <div class="field"><label for="profile-select">Perfil guardado</label><select id="profile-select"><option value="">Elegir perfil</option></select></div>
+              <button id="load-profile" type="button" class="button button-wide">Abrir perfil</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel-zone" hidden>
+          <div class="card-heading"><h2>Zona de conteo</h2><p id="roi-instructions">Marca al menos tres vértices sobre el cuadro. Arrástralos para ajustar el polígono.</p><p>Mantén la cámara y el zoom fijos. Si cambia el encuadre, revisa la zona.</p></div>
+          <div class="panel-body">
+            <div class="zone-status" id="zone-status" data-tone="neutral"><span class="status-dot"></span><span id="zone-label">0 vértices</span></div>
+            <div class="zone-actions">
+              <button id="undo-roi" type="button" class="button">Deshacer</button>
+              <button id="clear-roi" type="button" class="button">Borrar</button>
+              <button id="full-roi" type="button" class="button">Todo el cuadro</button>
+            </div>
+            <details id="vertex-details" class="details" hidden>
+              <summary>Coordenadas y teclado</summary>
+              <p>En el cuadro, mueve la cruz con las flechas y añade un vértice con Enter. Usa Mayús para moverla más rápido.</p>
+              <div id="vertex-fields"></div>
+            </details>
+            <div class="field"><label for="run-name">Nombre de la corrida</label><input id="run-name" placeholder="Ej. Piloto · acceso norte" maxlength="120"></div>
+            <div class="field"><label for="condition">Condición de observación</label>
+              <select id="condition">
+                <option value="unknown">Sin clasificar</option><option value="day_dry">Día · seco</option><option value="night_dry">Noche · seco</option><option value="day_rain">Día · lluvia</option><option value="night_rain">Noche · lluvia</option>
+              </select>
+            </div>
+            <details class="details" id="advanced">
+              <summary>Ajustes avanzados</summary>
+              <div class="advanced-fields">
+                <div class="field"><label for="anchor">Punto del vehículo</label><select id="anchor"><option value="bottom_center">Centro inferior</option><option value="center">Centro del recuadro</option></select></div>
+                <div class="field"><label for="model">Modelo</label><select id="model"><option value="yolov8n.pt">YOLOv8n · ligero</option><option value="yolov8s.pt" selected>YOLOv8s</option></select></div>
+                <div class="field"><label for="device">Procesador</label><select id="device"><option value="auto">Automático</option><option value="cpu">CPU</option><option value="0">GPU 0</option></select></div>
+                <div class="advanced-grid">
+                  <div class="field"><label for="image-size">Resolución de análisis</label><input id="image-size" type="number" min="320" max="1280" step="32" value="960"></div>
+                  <div class="field"><label for="confidence">Confianza mínima</label><input id="confidence" type="number" min="0.05" max="0.95" step="0.01" value="0.25"></div>
+                </div>
+                <div class="field"><label for="sample-fps">Cuadros a analizar por segundo</label><input id="sample-fps" type="number" min="0.2" max="30" step="0.1" value="5"></div>
+                <div class="field"><label for="validation-interval">Intervalo de muestreo manual (s)</label><input id="validation-interval" type="number" min="1" max="300" step="any" value="5"></div>
+                <div>
+                  <label class="checkbox"><input type="checkbox" id="crop-to-roi" aria-describedby="crop-hint"> Concentrar análisis en la zona</label>
+                  <p id="crop-hint" class="checkbox-help">Analiza un recorte con margen alrededor del polígono para conservar el contexto de los vehículos cercanos.</p>
+                </div>
+                <label class="checkbox"><input type="checkbox" id="tracking" checked> Activar seguimiento</label>
+                <label class="checkbox"><input type="checkbox" id="realtime"> Respetar el ritmo del video</label>
+                <label class="checkbox"><input type="checkbox" id="save-annotated"> Guardar video anotado en el ZIP</label>
+              </div>
+            </details>
+            <div class="inspector-actions">
+              <button id="start-run" type="button" class="button primary button-wide" disabled>Iniciar conteo <span aria-hidden="true">▶</span></button>
+              <button id="save-profile" type="button" class="button button-wide" disabled>Guardar perfil</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel-operation" hidden>
+          <div class="card-heading"><h2>Operación</h2><p id="operation-message">Inicia una corrida desde Zona.</p></div>
+          <div class="panel-body operation-body">
+            <div class="readout"><span>Vehículos presentes</span><strong id="count">—</strong><small id="observation-label">Sin lectura</small></div>
+            <div class="observation-warning" id="observation-warning" hidden></div>
+            <progress id="progress" max="1" value="0" aria-label="Progreso de procesamiento" hidden></progress>
+            <dl class="operation-metrics"><div><dt>Tiempo de fuente</dt><dd id="source-time">—</dd></div><div><dt>Cuadros analizados</dt><dd id="processed">—</dd></div><div><dt>Inferencia</dt><dd id="inference">—</dd></div><div><dt>Ritmo de análisis</dt><dd id="processing-fps">—</dd></div></dl>
+            <div class="class-section"><h3>Por tipo de vehículo</h3><dl id="class-counts" class="class-counts"><div><dt>Sin desglose disponible</dt><dd>—</dd></div></dl></div>
+            <div class="inspector-actions"><button id="confirm-view" type="button" class="button primary button-wide" hidden>Confirmar mismo encuadre</button><button id="stop-run" type="button" class="button button-danger button-wide" disabled>Detener conteo</button><button id="open-results" type="button" class="button button-wide">Ver resultados</button></div>
+          </div>
+        </section>
+      </aside>
+      <section class="card chart-card" id="history-panel" aria-labelledby="history-heading" hidden>
+        <div class="card-heading chart-heading"><div><h2 id="history-heading">Presencia en el tiempo</h2><p>Lecturas de la corrida actual en el tiempo de la fuente.</p></div><span class="chart-key"><i></i> Vehículos presentes</span></div>
+        <div class="chart-wrap"><canvas id="history-chart" role="img" aria-label="Gráfico de vehículos presentes a lo largo del tiempo"></canvas><p id="chart-empty" class="chart-empty">La serie aparece al recibir lecturas.</p></div>
+      </section>
+    </div>
+
+    <section id="results-panel" class="results-layout" aria-label="Resultados y validación" hidden>
+      <section class="card runs-card" aria-labelledby="runs-heading">
+        <div class="card-heading"><h2 id="runs-heading">Corridas guardadas</h2><p>Selecciona una corrida para revisar o exportar.</p></div>
+        <div class="panel-body run-list" id="run-list"><p class="muted">Cargando corridas…</p></div>
+      </section>
+      <section class="card result-card" aria-labelledby="result-heading">
+        <div class="card-heading result-heading"><div><h2 id="result-heading">Resultados</h2><p id="result-subtitle">Selecciona una corrida.</p></div><a id="download-run" class="button primary" href="#" download hidden>Descargar ZIP <span aria-hidden="true">↓</span></a></div>
+        <div id="result-summary" class="result-summary"></div>
+        <div id="validation-panel" class="validation-panel" hidden>
+          <div class="validation-title"><div><h3>Validación manual</h3><p id="annotation-instructions">Cuenta los vehículos dentro del polígono en el cuadro sin detecciones.</p></div><span id="sample-progress" class="tag"></span></div>
+          <p id="validation-empty" class="muted">Cargando muestras…</p>
+          <div id="sample-editor" class="sample-editor" hidden>
+            <div class="sample-picture">
+              <div id="sample-view" class="sample-view"><img id="sample-image" alt="Cuadro para conteo manual"><canvas id="sample-roi" aria-hidden="true"></canvas></div>
+              <div class="sample-navigation"><button id="prev-sample" class="button" type="button">Anterior</button><span id="sample-time"></span><button id="next-sample" class="button" type="button">Siguiente</button></div>
+            </div>
+            <form id="annotation-form" class="annotation-form">
+              <div class="field"><label for="manual-count">Vehículos presentes</label><input id="manual-count" type="number" min="0" max="1000" step="1" placeholder="Escribe tu conteo" inputmode="numeric"></div>
+              <div class="field"><label for="sample-condition">Condición del cuadro</label><select id="sample-condition"><option value="unknown">Sin clasificar</option><option value="day_dry">Día · seco</option><option value="night_dry">Noche · seco</option><option value="day_rain">Día · lluvia</option><option value="night_rain">Noche · lluvia</option></select></div>
+              <button id="save-annotation" type="submit" class="button primary button-wide">Guardar conteo</button>
+              <button id="clear-annotation" type="button" class="button button-wide" hidden>Quitar conteo</button>
+              <p class="annotation-status" id="annotation-status" role="status"></p>
+            </form>
+          </div>
+          <section id="metrics-panel" class="metrics-panel" aria-labelledby="metrics-heading" hidden>
+            <h3 id="metrics-heading">Comparación de conteos</h3>
+            <dl id="validation-metrics" class="validation-metrics"></dl>
+            <div id="condition-metrics"></div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="profile-dialog" aria-labelledby="profile-title">
+    <form id="profile-form">
+      <div class="card-heading"><h2 id="profile-title">Guardar perfil</h2><p>Vuelve a usar el polígono y los ajustes de esta fuente.</p></div>
+      <div class="panel-body"><div class="field"><label for="profile-name">Nombre del perfil</label><input id="profile-name" required maxlength="120" autocomplete="off"></div><p class="annotation-status" id="profile-message" role="status"></p><div class="dialog-actions"><button id="cancel-profile" type="button" class="button">Cancelar</button><button id="confirm-profile" type="submit" class="button primary">Guardar</button></div></div>
+    </form>
+  </dialog>
+</body>
+</html>

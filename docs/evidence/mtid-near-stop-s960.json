@@ -1,0 +1,3139 @@
+{
+  "reference_source": "https://www.kaggle.com/datasets/andreasmoegelmose/multiview-traffic-intersection-dataset",
+  "reference_scope": "Carril cercano inferior izquierdo hacia el cruce, alrededor de su línea de parada.",
+  "reference_box_rule": "Recorte al cuadro antes de calcular el centro inferior.",
+  "reference_limit": "Cuadros espaciados de una sola cámara; la observación es por imagen.",
+  "manifest": "C:\\Users\\bryan\\.cache\\smart-signals\\datasets\\mtid\\samples-v1.json",
+  "manifest_sha256": "fd8186b30ab82bce8bde50eb82e0ee44ff6813ffe0008b3936ee5694a55730ee",
+  "annotation_sha256": "a5111f1454f5834660135eb585631db9af46971bf6922262f38528a36bfa764f",
+  "code_sha256": {
+    "scripts/benchmark_mtid.py": "74930c4b078bb2ff7ad03eb9b083bbfebe12d26110ab24528b76eb45072bffbc",
+    "scripts/benchmark_presence.py": "e9b718bdf4a9fd2ffe700ed80e504518f81254438e5800e75150fe66bad57df3",
+    "scripts/fetch_datasets.py": "9d9d47f66a495a213c93ae677dda6b6a2420fea2f304494e3ce7417b7c4707a1",
+    "smart_signals/engine.py": "850c2f7a39d67ae15b1bc97d6271c170dda3a112165b29457b8320b06f75cffa",
+    "smart_signals/geometry.py": "3e2e4dbe4c1b3dc8f072af2ba7634ede30715e1827606609b70a9fe41ee16950",
+    "smart_signals/evaluation.py": "576b864bcbd69365bca8fedcd8fa197ce2c5c90e15e28dc3e3d7c2cff5b23709"
+  },
+  "environment": {
+    "opencv": "4.12.0",
+    "torch": "2.7.1+cu128",
+    "ultralytics": "8.3.169"
+  },
+  "config": {
+    "roi": [
+      [
+        0.0,
+        0.73125
+      ],
+      [
+        0.1181640625,
+        0.59375
+      ],
+      [
+        0.1767578125,
+        0.759375
+      ],
+      [
+        0.0,
+        0.9734375
+      ]
+    ],
+    "anchor": "bottom_center",
+    "model": "C:\\Users\\bryan\\.cache\\smart-signals\\models\\yolov8s.pt",
+    "device": "cpu",
+    "confidence": 0.25,
+    "image_size": 960,
+    "tracking": false,
+    "crop_to_roi": false,
+    "model_sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a"
+  },
+  "status_counts": {
+    "valid": 300
+  },
+  "metrics": {
+    "total_samples": 300,
+    "samples": 300,
+    "matched": 285,
+    "unavailable": 0,
+    "predicted_samples": 300,
+    "exact_agreement": 0.95,
+    "mae": 0.05,
+    "bias": -0.01,
+    "false_empty_rate": 0.4090909090909091,
+    "false_occupied_rate": 0.02158273381294964,
+    "occupied_pairs": 22,
+    "empty_pairs": 278,
+    "coverage": 1.0,
+    "prediction_coverage": 1.0,
+    "by_condition": {
+      "day_clear_view": {
+        "total_samples": 300,
+        "samples": 300,
+        "matched": 285,
+        "unavailable": 0,
+        "predicted_samples": 300,
+        "exact_agreement": 0.95,
+        "mae": 0.05,
+        "bias": -0.01,
+        "false_empty_rate": 0.4090909090909091,
+        "false_occupied_rate": 0.02158273381294964,
+        "occupied_pairs": 22,
+        "empty_pairs": 278,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      }
+    },
+    "by_count_band": {
+      "0": {
+        "total_samples": 278,
+        "samples": 278,
+        "matched": 272,
+        "unavailable": 0,
+        "predicted_samples": 278,
+        "exact_agreement": 0.9784172661870504,
+        "mae": 0.02158273381294964,
+        "bias": 0.02158273381294964,
+        "false_empty_rate": null,
+        "false_occupied_rate": 0.02158273381294964,
+        "occupied_pairs": 0,
+        "empty_pairs": 278,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      },
+      "1-2": {
+        "total_samples": 22,
+        "samples": 22,
+        "matched": 13,
+        "unavailable": 0,
+        "predicted_samples": 22,
+        "exact_agreement": 0.5909090909090909,
+        "mae": 0.4090909090909091,
+        "bias": -0.4090909090909091,
+        "false_empty_rate": 0.4090909090909091,
+        "false_occupied_rate": null,
+        "occupied_pairs": 22,
+        "empty_pairs": 0,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      },
+      "3+": {
+        "total_samples": 0,
+        "samples": 0,
+        "matched": 0,
+        "unavailable": 0,
+        "predicted_samples": 0,
+        "exact_agreement": null,
+        "mae": null,
+        "bias": null,
+        "false_empty_rate": null,
+        "false_occupied_rate": null,
+        "occupied_pairs": 0,
+        "empty_pairs": 0,
+        "coverage": null,
+        "prediction_coverage": null
+      }
+    }
+  },
+  "samples": [
+    {
+      "image_id": 0,
+      "filename": "mtid/frames/seq3-infra_0000001.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 2930.5330000061076
+    },
+    {
+      "image_id": 8,
+      "filename": "mtid/frames/seq3-infra_0000009.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 265.1006999949459
+    },
+    {
+      "image_id": 16,
+      "filename": "mtid/frames/seq3-infra_0000017.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 318.8700000173412
+    },
+    {
+      "image_id": 24,
+      "filename": "mtid/frames/seq3-infra_0000025.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 332.4218000052497
+    },
+    {
+      "image_id": 33,
+      "filename": "mtid/frames/seq3-infra_0000034.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 333.9869999908842
+    },
+    {
+      "image_id": 41,
+      "filename": "mtid/frames/seq3-infra_0000042.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 327.67719999537803
+    },
+    {
+      "image_id": 49,
+      "filename": "mtid/frames/seq3-infra_0000050.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 381.72569999005646
+    },
+    {
+      "image_id": 57,
+      "filename": "mtid/frames/seq3-infra_0000058.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 358.5192000027746
+    },
+    {
+      "image_id": 65,
+      "filename": "mtid/frames/seq3-infra_0000066.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 406.7577999958303
+    },
+    {
+      "image_id": 73,
+      "filename": "mtid/frames/seq3-infra_0000074.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 400.80499998293817
+    },
+    {
+      "image_id": 82,
+      "filename": "mtid/frames/seq3-infra_0000083.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 357.2883000015281
+    },
+    {
+      "image_id": 90,
+      "filename": "mtid/frames/seq3-infra_0000091.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 272.06469999509864
+    },
+    {
+      "image_id": 98,
+      "filename": "mtid/frames/seq3-infra_0000099.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 324.3232000095304
+    },
+    {
+      "image_id": 106,
+      "filename": "mtid/frames/seq3-infra_0000107.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 320.37580001633614
+    },
+    {
+      "image_id": 114,
+      "filename": "mtid/frames/seq3-infra_0000115.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 415.4980000166688
+    },
+    {
+      "image_id": 122,
+      "filename": "mtid/frames/seq3-infra_0000123.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 351.3486000010744
+    },
+    {
+      "image_id": 130,
+      "filename": "mtid/frames/seq3-infra_0000131.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 352.75580000597984
+    },
+    {
+      "image_id": 139,
+      "filename": "mtid/frames/seq3-infra_0000140.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 356.4669999759644
+    },
+    {
+      "image_id": 147,
+      "filename": "mtid/frames/seq3-infra_0000148.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 340.22809998714365
+    },
+    {
+      "image_id": 155,
+      "filename": "mtid/frames/seq3-infra_0000156.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 486.31639999803156
+    },
+    {
+      "image_id": 163,
+      "filename": "mtid/frames/seq3-infra_0000164.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 416.96639999281615
+    },
+    {
+      "image_id": 171,
+      "filename": "mtid/frames/seq3-infra_0000172.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 478.0476000159979
+    },
+    {
+      "image_id": 179,
+      "filename": "mtid/frames/seq3-infra_0000180.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 437.37520001013763
+    },
+    {
+      "image_id": 187,
+      "filename": "mtid/frames/seq3-infra_0000188.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 484.5109999878332
+    },
+    {
+      "image_id": 196,
+      "filename": "mtid/frames/seq3-infra_0000197.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 422.91279998607934
+    },
+    {
+      "image_id": 204,
+      "filename": "mtid/frames/seq3-infra_0000205.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 441.55980000505224
+    },
+    {
+      "image_id": 212,
+      "filename": "mtid/frames/seq3-infra_0000213.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 439.676399983
+    },
+    {
+      "image_id": 220,
+      "filename": "mtid/frames/seq3-infra_0000221.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 420.55089998757467
+    },
+    {
+      "image_id": 228,
+      "filename": "mtid/frames/seq3-infra_0000229.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 441.9456000032369
+    },
+    {
+      "image_id": 236,
+      "filename": "mtid/frames/seq3-infra_0000237.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 296.1291999963578
+    },
+    {
+      "image_id": 245,
+      "filename": "mtid/frames/seq3-infra_0000246.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 384.9188000021968
+    },
+    {
+      "image_id": 253,
+      "filename": "mtid/frames/seq3-infra_0000254.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 409.0833000082057
+    },
+    {
+      "image_id": 261,
+      "filename": "mtid/frames/seq3-infra_0000262.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 389.6489000180736
+    },
+    {
+      "image_id": 269,
+      "filename": "mtid/frames/seq3-infra_0000270.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 464.9093000043649
+    },
+    {
+      "image_id": 277,
+      "filename": "mtid/frames/seq3-infra_0000278.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 435.1169999863487
+    },
+    {
+      "image_id": 285,
+      "filename": "mtid/frames/seq3-infra_0000286.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 455.76439998694696
+    },
+    {
+      "image_id": 293,
+      "filename": "mtid/frames/seq3-infra_0000294.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 417.98389999894425
+    },
+    {
+      "image_id": 302,
+      "filename": "mtid/frames/seq3-infra_0000303.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 466.1502999952063
+    },
+    {
+      "image_id": 310,
+      "filename": "mtid/frames/seq3-infra_0000311.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 447.8852000029292
+    },
+    {
+      "image_id": 318,
+      "filename": "mtid/frames/seq3-infra_0000319.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 463.44150000368245
+    },
+    {
+      "image_id": 326,
+      "filename": "mtid/frames/seq3-infra_0000327.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 471.81250000721775
+    },
+    {
+      "image_id": 334,
+      "filename": "mtid/frames/seq3-infra_0000335.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 451.23659999808297
+    },
+    {
+      "image_id": 342,
+      "filename": "mtid/frames/seq3-infra_0000343.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 485.8587000053376
+    },
+    {
+      "image_id": 350,
+      "filename": "mtid/frames/seq3-infra_0000351.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 409.7708000044804
+    },
+    {
+      "image_id": 359,
+      "filename": "mtid/frames/seq3-infra_0000360.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 359.4118999899365
+    },
+    {
+      "image_id": 367,
+      "filename": "mtid/frames/seq3-infra_0000368.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 382.26459998986684
+    },
+    {
+      "image_id": 375,
+      "filename": "mtid/frames/seq3-infra_0000376.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 402.254599990556
+    },
+    {
+      "image_id": 383,
+      "filename": "mtid/frames/seq3-infra_0000384.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 430.2925000083633
+    },
+    {
+      "image_id": 391,
+      "filename": "mtid/frames/seq3-infra_0000392.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 444.88920000731014
+    },
+    {
+      "image_id": 399,
+      "filename": "mtid/frames/seq3-infra_0000400.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 472.47440001228824
+    },
+    {
+      "image_id": 408,
+      "filename": "mtid/frames/seq3-infra_0000409.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 450.0613999844063
+    },
+    {
+      "image_id": 416,
+      "filename": "mtid/frames/seq3-infra_0000417.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 441.48139999015257
+    },
+    {
+      "image_id": 424,
+      "filename": "mtid/frames/seq3-infra_0000425.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 448.4353000007104
+    },
+    {
+      "image_id": 432,
+      "filename": "mtid/frames/seq3-infra_0000433.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 509.58889999310486
+    },
+    {
+      "image_id": 440,
+      "filename": "mtid/frames/seq3-infra_0000441.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 451.6670000157319
+    },
+    {
+      "image_id": 448,
+      "filename": "mtid/frames/seq3-infra_0000449.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 413.52349999942817
+    },
+    {
+      "image_id": 456,
+      "filename": "mtid/frames/seq3-infra_0000457.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 443.85380001040176
+    },
+    {
+      "image_id": 465,
+      "filename": "mtid/frames/seq3-infra_0000466.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 389.5325000048615
+    },
+    {
+      "image_id": 473,
+      "filename": "mtid/frames/seq3-infra_0000474.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 351.4173000003211
+    },
+    {
+      "image_id": 481,
+      "filename": "mtid/frames/seq3-infra_0000482.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 385.45289999456145
+    },
+    {
+      "image_id": 489,
+      "filename": "mtid/frames/seq3-infra_0000490.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 463.4012999886181
+    },
+    {
+      "image_id": 497,
+      "filename": "mtid/frames/seq3-infra_0000498.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 363.8441000075545
+    },
+    {
+      "image_id": 505,
+      "filename": "mtid/frames/seq3-infra_0000506.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 460.67109997966327
+    },
+    {
+      "image_id": 513,
+      "filename": "mtid/frames/seq3-infra_0000514.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 447.6933999976609
+    },
+    {
+      "image_id": 522,
+      "filename": "mtid/frames/seq3-infra_0000523.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 372.3191999888513
+    },
+    {
+      "image_id": 530,
+      "filename": "mtid/frames/seq3-infra_0000531.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 431.5276999841444
+    },
+    {
+      "image_id": 538,
+      "filename": "mtid/frames/seq3-infra_0000539.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 409.39759998582304
+    },
+    {
+      "image_id": 546,
+      "filename": "mtid/frames/seq3-infra_0000547.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 480.6584999896586
+    },
+    {
+      "image_id": 554,
+      "filename": "mtid/frames/seq3-infra_0000555.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 385.57730001048185
+    },
+    {
+      "image_id": 562,
+      "filename": "mtid/frames/seq3-infra_0000563.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 442.99000001046807
+    },
+    {
+      "image_id": 571,
+      "filename": "mtid/frames/seq3-infra_0000572.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 408.6691999982577
+    },
+    {
+      "image_id": 579,
+      "filename": "mtid/frames/seq3-infra_0000580.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 416.2402000220027
+    },
+    {
+      "image_id": 587,
+      "filename": "mtid/frames/seq3-infra_0000588.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 433.3576999779325
+    },
+    {
+      "image_id": 595,
+      "filename": "mtid/frames/seq3-infra_0000596.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 376.5385999868158
+    },
+    {
+      "image_id": 603,
+      "filename": "mtid/frames/seq3-infra_0000604.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 416.19220000575297
+    },
+    {
+      "image_id": 611,
+      "filename": "mtid/frames/seq3-infra_0000612.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 434.90799999563023
+    },
+    {
+      "image_id": 619,
+      "filename": "mtid/frames/seq3-infra_0000620.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 438.45410001813434
+    },
+    {
+      "image_id": 628,
+      "filename": "mtid/frames/seq3-infra_0000629.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 473.47630001604557
+    },
+    {
+      "image_id": 636,
+      "filename": "mtid/frames/seq3-infra_0000637.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 436.4785999932792
+    },
+    {
+      "image_id": 644,
+      "filename": "mtid/frames/seq3-infra_0000645.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 471.9780999876093
+    },
+    {
+      "image_id": 652,
+      "filename": "mtid/frames/seq3-infra_0000653.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 439.3749999871943
+    },
+    {
+      "image_id": 660,
+      "filename": "mtid/frames/seq3-infra_0000661.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 469.1148999845609
+    },
+    {
+      "image_id": 668,
+      "filename": "mtid/frames/seq3-infra_0000669.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 446.96939998539165
+    },
+    {
+      "image_id": 676,
+      "filename": "mtid/frames/seq3-infra_0000677.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 476.93019997677766
+    },
+    {
+      "image_id": 685,
+      "filename": "mtid/frames/seq3-infra_0000686.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 419.7621999774128
+    },
+    {
+      "image_id": 693,
+      "filename": "mtid/frames/seq3-infra_0000694.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 485.74820000794716
+    },
+    {
+      "image_id": 701,
+      "filename": "mtid/frames/seq3-infra_0000702.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 357.1511000045575
+    },
+    {
+      "image_id": 709,
+      "filename": "mtid/frames/seq3-infra_0000710.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 460.61430001282133
+    },
+    {
+      "image_id": 717,
+      "filename": "mtid/frames/seq3-infra_0000718.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 436.11589999636635
+    },
+    {
+      "image_id": 725,
+      "filename": "mtid/frames/seq3-infra_0000726.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 462.5645999913104
+    },
+    {
+      "image_id": 734,
+      "filename": "mtid/frames/seq3-infra_0000735.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 495.3148000058718
+    },
+    {
+      "image_id": 742,
+      "filename": "mtid/frames/seq3-infra_0000743.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 430.3836000035517
+    },
+    {
+      "image_id": 750,
+      "filename": "mtid/frames/seq3-infra_0000751.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 485.90660002082586
+    },
+    {
+      "image_id": 758,
+      "filename": "mtid/frames/seq3-infra_0000759.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 442.4551000120118
+    },
+    {
+      "image_id": 766,
+      "filename": "mtid/frames/seq3-infra_0000767.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 484.6423000271898
+    },
+    {
+      "image_id": 774,
+      "filename": "mtid/frames/seq3-infra_0000775.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 373.07530001271516
+    },
+    {
+      "image_id": 782,
+      "filename": "mtid/frames/seq3-infra_0000783.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 474.67650001635775
+    },
+    {
+      "image_id": 791,
+      "filename": "mtid/frames/seq3-infra_0000792.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 431.2502999964636
+    },
+    {
+      "image_id": 799,
+      "filename": "mtid/frames/seq3-infra_0000800.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 493.43810000573285
+    },
+    {
+      "image_id": 807,
+      "filename": "mtid/frames/seq3-infra_0000808.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 429.1707999946084
+    },
+    {
+      "image_id": 815,
+      "filename": "mtid/frames/seq3-infra_0000816.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 434.72509999992326
+    },
+    {
+      "image_id": 823,
+      "filename": "mtid/frames/seq3-infra_0000824.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 458.8782000064384
+    },
+    {
+      "image_id": 831,
+      "filename": "mtid/frames/seq3-infra_0000832.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 448.97510000737384
+    },
+    {
+      "image_id": 840,
+      "filename": "mtid/frames/seq3-infra_0000841.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 469.3248000112362
+    },
+    {
+      "image_id": 848,
+      "filename": "mtid/frames/seq3-infra_0000849.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 410.06059999926947
+    },
+    {
+      "image_id": 856,
+      "filename": "mtid/frames/seq3-infra_0000857.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 460.05210001021624
+    },
+    {
+      "image_id": 864,
+      "filename": "mtid/frames/seq3-infra_0000865.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 367.21379999653436
+    },
+    {
+      "image_id": 872,
+      "filename": "mtid/frames/seq3-infra_0000873.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 483.3101999829523
+    },
+    {
+      "image_id": 880,
+      "filename": "mtid/frames/seq3-infra_0000881.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 447.8631000092719
+    },
+    {
+      "image_id": 888,
+      "filename": "mtid/frames/seq3-infra_0000889.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 479.3276000127662
+    },
+    {
+      "image_id": 897,
+      "filename": "mtid/frames/seq3-infra_0000898.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 437.07059998996556
+    },
+    {
+      "image_id": 905,
+      "filename": "mtid/frames/seq3-infra_0000906.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 420.40309999720193
+    },
+    {
+      "image_id": 913,
+      "filename": "mtid/frames/seq3-infra_0000914.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 429.58740002359264
+    },
+    {
+      "image_id": 921,
+      "filename": "mtid/frames/seq3-infra_0000922.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 420.0014999951236
+    },
+    {
+      "image_id": 929,
+      "filename": "mtid/frames/seq3-infra_0000930.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 465.1231000025291
+    },
+    {
+      "image_id": 937,
+      "filename": "mtid/frames/seq3-infra_0000938.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 343.2498999754898
+    },
+    {
+      "image_id": 945,
+      "filename": "mtid/frames/seq3-infra_0000946.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 418.4483999852091
+    },
+    {
+      "image_id": 954,
+      "filename": "mtid/frames/seq3-infra_0000955.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 400.5339000141248
+    },
+    {
+      "image_id": 962,
+      "filename": "mtid/frames/seq3-infra_0000963.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 377.90920000406913
+    },
+    {
+      "image_id": 970,
+      "filename": "mtid/frames/seq3-infra_0000971.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 466.7194999929052
+    },
+    {
+      "image_id": 978,
+      "filename": "mtid/frames/seq3-infra_0000979.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 342.62819998548366
+    },
+    {
+      "image_id": 986,
+      "filename": "mtid/frames/seq3-infra_0000987.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 398.61850001034327
+    },
+    {
+      "image_id": 994,
+      "filename": "mtid/frames/seq3-infra_0000995.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 384.8785999871325
+    },
+    {
+      "image_id": 1004,
+      "filename": "mtid/frames/seq3-infra_0001004.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 338.96910000476055
+    },
+    {
+      "image_id": 1012,
+      "filename": "mtid/frames/seq3-infra_0001012.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 342.7486000000499
+    },
+    {
+      "image_id": 1020,
+      "filename": "mtid/frames/seq3-infra_0001020.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 342.0164000126533
+    },
+    {
+      "image_id": 1028,
+      "filename": "mtid/frames/seq3-infra_0001028.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 339.6315000136383
+    },
+    {
+      "image_id": 1036,
+      "filename": "mtid/frames/seq3-infra_0001036.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 341.32839998346753
+    },
+    {
+      "image_id": 1044,
+      "filename": "mtid/frames/seq3-infra_0001044.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 334.97159997932613
+    },
+    {
+      "image_id": 1052,
+      "filename": "mtid/frames/seq3-infra_0001052.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 283.0328000127338
+    },
+    {
+      "image_id": 1061,
+      "filename": "mtid/frames/seq3-infra_0001061.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 351.3148999772966
+    },
+    {
+      "image_id": 1069,
+      "filename": "mtid/frames/seq3-infra_0001069.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 318.74569997307844
+    },
+    {
+      "image_id": 1077,
+      "filename": "mtid/frames/seq3-infra_0001077.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 348.44579998753034
+    },
+    {
+      "image_id": 1085,
+      "filename": "mtid/frames/seq3-infra_0001085.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 338.8201000052504
+    },
+    {
+      "image_id": 1093,
+      "filename": "mtid/frames/seq3-infra_0001093.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 317.00999999884516
+    },
+    {
+      "image_id": 1101,
+      "filename": "mtid/frames/seq3-infra_0001101.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 359.994700003881
+    },
+    {
+      "image_id": 1109,
+      "filename": "mtid/frames/seq3-infra_0001109.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 369.7383000107948
+    },
+    {
+      "image_id": 1118,
+      "filename": "mtid/frames/seq3-infra_0001118.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 312.50050000380725
+    },
+    {
+      "image_id": 1126,
+      "filename": "mtid/frames/seq3-infra_0001126.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 335.0884999963455
+    },
+    {
+      "image_id": 1134,
+      "filename": "mtid/frames/seq3-infra_0001134.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 331.15849999012426
+    },
+    {
+      "image_id": 1142,
+      "filename": "mtid/frames/seq3-infra_0001142.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 305.7490999926813
+    },
+    {
+      "image_id": 1150,
+      "filename": "mtid/frames/seq3-infra_0001150.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 327.6119999936782
+    },
+    {
+      "image_id": 1158,
+      "filename": "mtid/frames/seq3-infra_0001158.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 326.70030000736006
+    },
+    {
+      "image_id": 1167,
+      "filename": "mtid/frames/seq3-infra_0001167.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 281.80739999515936
+    },
+    {
+      "image_id": 1175,
+      "filename": "mtid/frames/seq3-infra_0001175.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 299.07909999019466
+    },
+    {
+      "image_id": 1183,
+      "filename": "mtid/frames/seq3-infra_0001183.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 370.17070001456887
+    },
+    {
+      "image_id": 1191,
+      "filename": "mtid/frames/seq3-infra_0001191.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 288.6585000087507
+    },
+    {
+      "image_id": 1199,
+      "filename": "mtid/frames/seq3-infra_0001199.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 289.2699999792967
+    },
+    {
+      "image_id": 1207,
+      "filename": "mtid/frames/seq3-infra_0001207.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 334.1055999917444
+    },
+    {
+      "image_id": 1215,
+      "filename": "mtid/frames/seq3-infra_0001215.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 331.12550000078045
+    },
+    {
+      "image_id": 1224,
+      "filename": "mtid/frames/seq3-infra_0001224.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 324.40030001453124
+    },
+    {
+      "image_id": 1232,
+      "filename": "mtid/frames/seq3-infra_0001232.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 333.4587999852374
+    },
+    {
+      "image_id": 1240,
+      "filename": "mtid/frames/seq3-infra_0001240.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 332.25199999287724
+    },
+    {
+      "image_id": 1248,
+      "filename": "mtid/frames/seq3-infra_0001248.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 324.5695999939926
+    },
+    {
+      "image_id": 1256,
+      "filename": "mtid/frames/seq3-infra_0001256.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 323.3780000009574
+    },
+    {
+      "image_id": 1264,
+      "filename": "mtid/frames/seq3-infra_0001264.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 342.86259999498725
+    },
+    {
+      "image_id": 1272,
+      "filename": "mtid/frames/seq3-infra_0001272.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 303.8539999979548
+    },
+    {
+      "image_id": 1281,
+      "filename": "mtid/frames/seq3-infra_0001281.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 265.80149997607805
+    },
+    {
+      "image_id": 1289,
+      "filename": "mtid/frames/seq3-infra_0001289.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 257.34720000764355
+    },
+    {
+      "image_id": 1297,
+      "filename": "mtid/frames/seq3-infra_0001297.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 303.12419999972917
+    },
+    {
+      "image_id": 1305,
+      "filename": "mtid/frames/seq3-infra_0001305.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 328.000500012422
+    },
+    {
+      "image_id": 1313,
+      "filename": "mtid/frames/seq3-infra_0001313.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 313.9863999967929
+    },
+    {
+      "image_id": 1321,
+      "filename": "mtid/frames/seq3-infra_0001321.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 311.7183000140358
+    },
+    {
+      "image_id": 1330,
+      "filename": "mtid/frames/seq3-infra_0001330.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 327.0712000085041
+    },
+    {
+      "image_id": 1338,
+      "filename": "mtid/frames/seq3-infra_0001338.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 333.8526999868918
+    },
+    {
+      "image_id": 1346,
+      "filename": "mtid/frames/seq3-infra_0001346.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 279.3355000030715
+    },
+    {
+      "image_id": 1354,
+      "filename": "mtid/frames/seq3-infra_0001354.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 311.6491999826394
+    },
+    {
+      "image_id": 1362,
+      "filename": "mtid/frames/seq3-infra_0001362.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 338.53320000343956
+    },
+    {
+      "image_id": 1370,
+      "filename": "mtid/frames/seq3-infra_0001370.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 312.1912000060547
+    },
+    {
+      "image_id": 1378,
+      "filename": "mtid/frames/seq3-infra_0001378.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 334.0625000128057
+    },
+    {
+      "image_id": 1387,
+      "filename": "mtid/frames/seq3-infra_0001387.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 325.87870000861585
+    },
+    {
+      "image_id": 1395,
+      "filename": "mtid/frames/seq3-infra_0001395.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 288.20680000353605
+    },
+    {
+      "image_id": 1403,
+      "filename": "mtid/frames/seq3-infra_0001403.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 321.83010000153445
+    },
+    {
+      "image_id": 1411,
+      "filename": "mtid/frames/seq3-infra_0001411.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 325.8273000246845
+    },
+    {
+      "image_id": 1419,
+      "filename": "mtid/frames/seq3-infra_0001419.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 295.29450001427904
+    },
+    {
+      "image_id": 1427,
+      "filename": "mtid/frames/seq3-infra_0001427.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 301.95600001025014
+    },
+    {
+      "image_id": 1435,
+      "filename": "mtid/frames/seq3-infra_0001435.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 298.5138999938499
+    },
+    {
+      "image_id": 1444,
+      "filename": "mtid/frames/seq3-infra_0001444.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 329.1216999932658
+    },
+    {
+      "image_id": 1452,
+      "filename": "mtid/frames/seq3-infra_0001452.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 343.8865000207443
+    },
+    {
+      "image_id": 1460,
+      "filename": "mtid/frames/seq3-infra_0001460.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 326.7314999829978
+    },
+    {
+      "image_id": 1468,
+      "filename": "mtid/frames/seq3-infra_0001468.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 330.2817000076175
+    },
+    {
+      "image_id": 1476,
+      "filename": "mtid/frames/seq3-infra_0001476.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 314.4639999954961
+    },
+    {
+      "image_id": 1484,
+      "filename": "mtid/frames/seq3-infra_0001484.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 323.1964999868069
+    },
+    {
+      "image_id": 1493,
+      "filename": "mtid/frames/seq3-infra_0001493.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 298.48369999672286
+    },
+    {
+      "image_id": 1501,
+      "filename": "mtid/frames/seq3-infra_0001501.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 330.60269997804426
+    },
+    {
+      "image_id": 1509,
+      "filename": "mtid/frames/seq3-infra_0001509.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 349.8403999838047
+    },
+    {
+      "image_id": 1517,
+      "filename": "mtid/frames/seq3-infra_0001517.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 306.5922999812756
+    },
+    {
+      "image_id": 1525,
+      "filename": "mtid/frames/seq3-infra_0001525.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 336.88879999681376
+    },
+    {
+      "image_id": 1533,
+      "filename": "mtid/frames/seq3-infra_0001533.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 350.579000019934
+    },
+    {
+      "image_id": 1541,
+      "filename": "mtid/frames/seq3-infra_0001541.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 315.1800999767147
+    },
+    {
+      "image_id": 1550,
+      "filename": "mtid/frames/seq3-infra_0001550.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 319.63670000550337
+    },
+    {
+      "image_id": 1558,
+      "filename": "mtid/frames/seq3-infra_0001558.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 326.57730000209995
+    },
+    {
+      "image_id": 1566,
+      "filename": "mtid/frames/seq3-infra_0001566.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 308.7937999807764
+    },
+    {
+      "image_id": 1574,
+      "filename": "mtid/frames/seq3-infra_0001574.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 288.93480001715943
+    },
+    {
+      "image_id": 1582,
+      "filename": "mtid/frames/seq3-infra_0001582.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 315.99989999085665
+    },
+    {
+      "image_id": 1590,
+      "filename": "mtid/frames/seq3-infra_0001590.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 303.96839999593794
+    },
+    {
+      "image_id": 1598,
+      "filename": "mtid/frames/seq3-infra_0001598.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 316.4165999914985
+    },
+    {
+      "image_id": 1607,
+      "filename": "mtid/frames/seq3-infra_0001607.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 322.3472999816295
+    },
+    {
+      "image_id": 1615,
+      "filename": "mtid/frames/seq3-infra_0001615.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 324.66670000576414
+    },
+    {
+      "image_id": 1623,
+      "filename": "mtid/frames/seq3-infra_0001623.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 324.0153999940958
+    },
+    {
+      "image_id": 1631,
+      "filename": "mtid/frames/seq3-infra_0001631.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 331.51940000243485
+    },
+    {
+      "image_id": 1639,
+      "filename": "mtid/frames/seq3-infra_0001639.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 303.80090000107884
+    },
+    {
+      "image_id": 1647,
+      "filename": "mtid/frames/seq3-infra_0001647.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 317.11770000401884
+    },
+    {
+      "image_id": 1656,
+      "filename": "mtid/frames/seq3-infra_0001656.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 304.25210000248626
+    },
+    {
+      "image_id": 1664,
+      "filename": "mtid/frames/seq3-infra_0001664.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 313.93600002047606
+    },
+    {
+      "image_id": 1672,
+      "filename": "mtid/frames/seq3-infra_0001672.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 232.5839000113774
+    },
+    {
+      "image_id": 1680,
+      "filename": "mtid/frames/seq3-infra_0001680.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 223.65100000752136
+    },
+    {
+      "image_id": 1688,
+      "filename": "mtid/frames/seq3-infra_0001688.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 216.58369997749105
+    },
+    {
+      "image_id": 1696,
+      "filename": "mtid/frames/seq3-infra_0001696.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 216.79710000171326
+    },
+    {
+      "image_id": 1704,
+      "filename": "mtid/frames/seq3-infra_0001704.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 223.00550001091324
+    },
+    {
+      "image_id": 1713,
+      "filename": "mtid/frames/seq3-infra_0001713.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 266.5532999963034
+    },
+    {
+      "image_id": 1721,
+      "filename": "mtid/frames/seq3-infra_0001721.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 254.0945999789983
+    },
+    {
+      "image_id": 1729,
+      "filename": "mtid/frames/seq3-infra_0001729.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 232.94190000160597
+    },
+    {
+      "image_id": 1737,
+      "filename": "mtid/frames/seq3-infra_0001737.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 228.68420000304468
+    },
+    {
+      "image_id": 1745,
+      "filename": "mtid/frames/seq3-infra_0001745.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 258.5405000136234
+    },
+    {
+      "image_id": 1753,
+      "filename": "mtid/frames/seq3-infra_0001753.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 333.1639000098221
+    },
+    {
+      "image_id": 1762,
+      "filename": "mtid/frames/seq3-infra_0001762.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 305.0951999903191
+    },
+    {
+      "image_id": 1770,
+      "filename": "mtid/frames/seq3-infra_0001770.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 327.06169999437407
+    },
+    {
+      "image_id": 1778,
+      "filename": "mtid/frames/seq3-infra_0001778.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 333.44170000054874
+    },
+    {
+      "image_id": 1786,
+      "filename": "mtid/frames/seq3-infra_0001786.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 309.7467999905348
+    },
+    {
+      "image_id": 1794,
+      "filename": "mtid/frames/seq3-infra_0001794.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 365.6090000004042
+    },
+    {
+      "image_id": 1802,
+      "filename": "mtid/frames/seq3-infra_0001802.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 367.75579999084584
+    },
+    {
+      "image_id": 1810,
+      "filename": "mtid/frames/seq3-infra_0001810.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 306.7258000082802
+    },
+    {
+      "image_id": 1819,
+      "filename": "mtid/frames/seq3-infra_0001819.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 343.23070000391454
+    },
+    {
+      "image_id": 1827,
+      "filename": "mtid/frames/seq3-infra_0001827.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 323.03239998873323
+    },
+    {
+      "image_id": 1835,
+      "filename": "mtid/frames/seq3-infra_0001835.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 314.54740001936443
+    },
+    {
+      "image_id": 1843,
+      "filename": "mtid/frames/seq3-infra_0001843.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 304.36140001984313
+    },
+    {
+      "image_id": 1851,
+      "filename": "mtid/frames/seq3-infra_0001851.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 294.40849999082275
+    },
+    {
+      "image_id": 1859,
+      "filename": "mtid/frames/seq3-infra_0001859.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 259.2818000121042
+    },
+    {
+      "image_id": 1867,
+      "filename": "mtid/frames/seq3-infra_0001867.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 269.87270000972785
+    },
+    {
+      "image_id": 1876,
+      "filename": "mtid/frames/seq3-infra_0001876.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 258.1489000003785
+    },
+    {
+      "image_id": 1884,
+      "filename": "mtid/frames/seq3-infra_0001884.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 275.0125000020489
+    },
+    {
+      "image_id": 1892,
+      "filename": "mtid/frames/seq3-infra_0001892.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 239.66329998802394
+    },
+    {
+      "image_id": 1900,
+      "filename": "mtid/frames/seq3-infra_0001900.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 317.1689999871887
+    },
+    {
+      "image_id": 1908,
+      "filename": "mtid/frames/seq3-infra_0001908.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 321.55839999904856
+    },
+    {
+      "image_id": 1916,
+      "filename": "mtid/frames/seq3-infra_0001916.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 292.88629998336546
+    },
+    {
+      "image_id": 1925,
+      "filename": "mtid/frames/seq3-infra_0001925.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 301.2509999971371
+    },
+    {
+      "image_id": 1933,
+      "filename": "mtid/frames/seq3-infra_0001933.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 332.57669999147765
+    },
+    {
+      "image_id": 1941,
+      "filename": "mtid/frames/seq3-infra_0001941.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 353.57559999101795
+    },
+    {
+      "image_id": 1949,
+      "filename": "mtid/frames/seq3-infra_0001949.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 373.0900000082329
+    },
+    {
+      "image_id": 1957,
+      "filename": "mtid/frames/seq3-infra_0001957.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 428.07909997645766
+    },
+    {
+      "image_id": 1965,
+      "filename": "mtid/frames/seq3-infra_0001965.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 336.231699999189
+    },
+    {
+      "image_id": 1973,
+      "filename": "mtid/frames/seq3-infra_0001973.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 412.41180000361055
+    },
+    {
+      "image_id": 1982,
+      "filename": "mtid/frames/seq3-infra_0001982.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 394.46519999182783
+    },
+    {
+      "image_id": 1990,
+      "filename": "mtid/frames/seq3-infra_0001990.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 409.07090000109747
+    },
+    {
+      "image_id": 1998,
+      "filename": "mtid/frames/seq3-infra_0001998.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 416.6358000074979
+    },
+    {
+      "image_id": 2006,
+      "filename": "mtid/frames/seq3-infra_0002665.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 309.1548999946099
+    },
+    {
+      "image_id": 2014,
+      "filename": "mtid/frames/seq3-infra_0002673.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 446.9364999968093
+    },
+    {
+      "image_id": 2022,
+      "filename": "mtid/frames/seq3-infra_0002681.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 401.6146999783814
+    },
+    {
+      "image_id": 2030,
+      "filename": "mtid/frames/seq3-infra_0002689.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 437.7225000062026
+    },
+    {
+      "image_id": 2039,
+      "filename": "mtid/frames/seq3-infra_0002698.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 433.4190999798011
+    },
+    {
+      "image_id": 2047,
+      "filename": "mtid/frames/seq3-infra_0002706.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 415.95670001697727
+    },
+    {
+      "image_id": 2055,
+      "filename": "mtid/frames/seq3-infra_0002714.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 427.7777000097558
+    },
+    {
+      "image_id": 2063,
+      "filename": "mtid/frames/seq3-infra_0002722.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 400.2311000076588
+    },
+    {
+      "image_id": 2071,
+      "filename": "mtid/frames/seq3-infra_0002730.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 444.5846999878995
+    },
+    {
+      "image_id": 2079,
+      "filename": "mtid/frames/seq3-infra_0002738.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 322.93249998474494
+    },
+    {
+      "image_id": 2088,
+      "filename": "mtid/frames/seq3-infra_0002747.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 358.7939999997616
+    },
+    {
+      "image_id": 2096,
+      "filename": "mtid/frames/seq3-infra_0002755.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 465.19119999720715
+    },
+    {
+      "image_id": 2104,
+      "filename": "mtid/frames/seq3-infra_0002763.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 393.13479998963885
+    },
+    {
+      "image_id": 2112,
+      "filename": "mtid/frames/seq3-infra_0002771.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 420.4119000060018
+    },
+    {
+      "image_id": 2120,
+      "filename": "mtid/frames/seq3-infra_0002779.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 379.47809998877347
+    },
+    {
+      "image_id": 2128,
+      "filename": "mtid/frames/seq3-infra_0002787.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 452.1163000026718
+    },
+    {
+      "image_id": 2136,
+      "filename": "mtid/frames/seq3-infra_0002795.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 388.1233999854885
+    },
+    {
+      "image_id": 2145,
+      "filename": "mtid/frames/seq3-infra_0002804.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 253.95720000960864
+    },
+    {
+      "image_id": 2153,
+      "filename": "mtid/frames/seq3-infra_0002812.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 227.08850001799874
+    },
+    {
+      "image_id": 2161,
+      "filename": "mtid/frames/seq3-infra_0002820.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 233.42929998761974
+    },
+    {
+      "image_id": 2169,
+      "filename": "mtid/frames/seq3-infra_0002828.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 355.4571999993641
+    },
+    {
+      "image_id": 2177,
+      "filename": "mtid/frames/seq3-infra_0002836.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 304.6354000107385
+    },
+    {
+      "image_id": 2185,
+      "filename": "mtid/frames/seq3-infra_0002844.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 272.0726999978069
+    },
+    {
+      "image_id": 2193,
+      "filename": "mtid/frames/seq3-infra_0002852.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 328.9097000088077
+    },
+    {
+      "image_id": 2202,
+      "filename": "mtid/frames/seq3-infra_0002861.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 296.1324999923818
+    },
+    {
+      "image_id": 2210,
+      "filename": "mtid/frames/seq3-infra_0002869.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 336.3187999930233
+    },
+    {
+      "image_id": 2218,
+      "filename": "mtid/frames/seq3-infra_0002877.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 323.40839999960735
+    },
+    {
+      "image_id": 2226,
+      "filename": "mtid/frames/seq3-infra_0002885.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 320.94400000642054
+    },
+    {
+      "image_id": 2234,
+      "filename": "mtid/frames/seq3-infra_0002893.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 317.2484999813605
+    },
+    {
+      "image_id": 2242,
+      "filename": "mtid/frames/seq3-infra_0002901.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 318.5529999900609
+    },
+    {
+      "image_id": 2251,
+      "filename": "mtid/frames/seq3-infra_0002910.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 306.4458000008017
+    },
+    {
+      "image_id": 2259,
+      "filename": "mtid/frames/seq3-infra_0002918.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 314.1882999916561
+    },
+    {
+      "image_id": 2267,
+      "filename": "mtid/frames/seq3-infra_0002926.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 331.95799999521114
+    },
+    {
+      "image_id": 2275,
+      "filename": "mtid/frames/seq3-infra_0002934.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 286.1235999735072
+    },
+    {
+      "image_id": 2283,
+      "filename": "mtid/frames/seq3-infra_0002942.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 333.0986000073608
+    },
+    {
+      "image_id": 2291,
+      "filename": "mtid/frames/seq3-infra_0002950.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 331.6340000019409
+    },
+    {
+      "image_id": 2299,
+      "filename": "mtid/frames/seq3-infra_0002958.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 290.4268999991473
+    },
+    {
+      "image_id": 2308,
+      "filename": "mtid/frames/seq3-infra_0002967.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 325.00620000064373
+    },
+    {
+      "image_id": 2316,
+      "filename": "mtid/frames/seq3-infra_0002975.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 326.6693000041414
+    },
+    {
+      "image_id": 2324,
+      "filename": "mtid/frames/seq3-infra_0002983.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 309.6600999997463
+    },
+    {
+      "image_id": 2332,
+      "filename": "mtid/frames/seq3-infra_0002991.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 315.1506000140216
+    },
+    {
+      "image_id": 2341,
+      "filename": "mtid/frames/seq3-infra_0003001.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 332.8844000061508
+    },
+    {
+      "image_id": 2349,
+      "filename": "mtid/frames/seq3-infra_0003009.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 305.61789998319
+    },
+    {
+      "image_id": 2357,
+      "filename": "mtid/frames/seq3-infra_0003017.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 328.65379998111166
+    },
+    {
+      "image_id": 2366,
+      "filename": "mtid/frames/seq3-infra_0003026.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 320.8833000098821
+    },
+    {
+      "image_id": 2374,
+      "filename": "mtid/frames/seq3-infra_0003034.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 293.5922000033315
+    },
+    {
+      "image_id": 2382,
+      "filename": "mtid/frames/seq3-infra_0003042.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 323.3565999835264
+    },
+    {
+      "image_id": 2390,
+      "filename": "mtid/frames/seq3-infra_0003050.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 328.27860000543296
+    },
+    {
+      "image_id": 2398,
+      "filename": "mtid/frames/seq3-infra_0003058.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 284.7196999937296
+    },
+    {
+      "image_id": 2406,
+      "filename": "mtid/frames/seq3-infra_0003066.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 356.0220999934245
+    },
+    {
+      "image_id": 2415,
+      "filename": "mtid/frames/seq3-infra_0003075.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 390.7769999932498
+    },
+    {
+      "image_id": 2423,
+      "filename": "mtid/frames/seq3-infra_0003083.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 318.65629999083467
+    },
+    {
+      "image_id": 2431,
+      "filename": "mtid/frames/seq3-infra_0003091.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 413.96309999981895
+    },
+    {
+      "image_id": 2439,
+      "filename": "mtid/frames/seq3-infra_0003099.jpg",
+      "condition": "day_clear_view",
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "warnings": [],
+      "inference_ms": 411.99319998850115
+    }
+  ]
+}

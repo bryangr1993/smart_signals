@@ -1,0 +1,3238 @@
+{
+  "reference_source": "https://doi.org/10.34740/kaggle/dsv/105294",
+  "reference_scope": "Región blanca de la máscara RGB de los autores para cada cámara.",
+  "reference_limit": "Prueba externa con un video por condición y fotogramas etiquetados dispersos.",
+  "source_sha256": {
+    "aauRainSnow-rgb.json": "a3f90c9b7329e9bfc6ecac59d5f71e7583ea961ecaa19ecc7d7ffdbf91a8284a",
+    "Hadsundvej-2.mkv": "d3d66096369ba7fc8cc834e80c715cb4b27ba5dd93ec2922a68a09483b45dec1",
+    "Hadsundvej-2-mask.png": "3854473ab931148115dc11fcced8157222db926082552cb6f6c65a9ca0cd7ac3",
+    "Egensevej-5.mkv": "cbe3b3c9bae697b6c0e4381fdc53f24a5f68629f8332ad9e68cbd0b26840e8dc",
+    "Egensevej-5-mask.png": "3b310e8ad13643794ebfbe4f4c4bd33bafdd5a3edc2f6fb5fa0e5cd5b3534865",
+    "Ringvej-1.mkv": "609142029482ff6151d4c473a36ebc54f9da7aded2ed1d5b787dea9415e66cc9",
+    "Ringvej-1-mask.png": "e1645ef0c2c250a0fb6a78edff44a334a05b1d7a8d0335eb72beacb3383072cc"
+  },
+  "code_sha256": {
+    "scripts/benchmark_presence.py": "e9b718bdf4a9fd2ffe700ed80e504518f81254438e5800e75150fe66bad57df3",
+    "smart_signals/engine.py": "ce162528213199f91bedaca3bd1a54818a95c27901f11f3ac7f78287a122780f",
+    "smart_signals/geometry.py": "3e2e4dbe4c1b3dc8f072af2ba7634ede30715e1827606609b70a9fe41ee16950",
+    "smart_signals/evaluation.py": "576b864bcbd69365bca8fedcd8fa197ce2c5c90e15e28dc3e3d7c2cff5b23709"
+  },
+  "environment": {
+    "opencv": "4.12.0",
+    "torch": "2.7.1+cu128",
+    "ultralytics": "8.3.169"
+  },
+  "config": {
+    "roi": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "anchor": "bottom_center",
+    "model": "C:\\Users\\bryan\\.cache\\smart-signals\\adaptation\\aau-rain-v1\\runs\\yolov8s-aau-rain\\weights\\best.pt",
+    "device": "0",
+    "confidence": 0.25,
+    "image_size": 960,
+    "tracking": true,
+    "model_sha256": "617a41273e01e25d5e1f9cf84e74e0ad5fa495dc8f78fedeb710ab6d0f1c595d",
+    "stride": 4,
+    "max_labels_per_scene": null
+  },
+  "scenes": {
+    "Hadsundvej-2": {
+      "fps_source": 20.0,
+      "frames_processed": 1575,
+      "elapsed_s": 66.17742809999618,
+      "effective_processing_fps": 23.79965564119726,
+      "mask_coverage_of_frame": 0.6155436197916667,
+      "reference_boxes_outside_mask": 235,
+      "predicted_boxes_outside_mask": 3032,
+      "status_counts_on_labeled_frames": {
+        "valid": 100
+      },
+      "warnings_on_labeled_frames": {},
+      "box_metrics": {
+        "reference": 1423,
+        "predicted": 2216,
+        "matched": 1112,
+        "precision": 0.5018050541516246,
+        "recall": 0.7814476458186929,
+        "iou_threshold": 0.5
+      }
+    },
+    "Egensevej-5": {
+      "fps_source": 20.0,
+      "frames_processed": 1573,
+      "elapsed_s": 37.44708990000072,
+      "effective_processing_fps": 42.00593435165625,
+      "mask_coverage_of_frame": 0.41746419270833335,
+      "reference_boxes_outside_mask": 0,
+      "predicted_boxes_outside_mask": 482,
+      "status_counts_on_labeled_frames": {
+        "valid": 81,
+        "degraded": 18
+      },
+      "warnings_on_labeled_frames": {
+        "Áreas extensas saturadas: revise deslumbramiento y visibilidad de la zona.": 18
+      },
+      "box_metrics": {
+        "reference": 28,
+        "predicted": 106,
+        "matched": 1,
+        "precision": 0.009433962264150943,
+        "recall": 0.03571428571428571,
+        "iou_threshold": 0.5
+      }
+    },
+    "Ringvej-1": {
+      "fps_source": 20.0,
+      "frames_processed": 1553,
+      "elapsed_s": 45.111726500006625,
+      "effective_processing_fps": 34.42563875270373,
+      "mask_coverage_of_frame": 0.9320540364583333,
+      "reference_boxes_outside_mask": 38,
+      "predicted_boxes_outside_mask": 507,
+      "status_counts_on_labeled_frames": {
+        "valid": 100
+      },
+      "warnings_on_labeled_frames": {},
+      "box_metrics": {
+        "reference": 295,
+        "predicted": 822,
+        "matched": 118,
+        "precision": 0.1435523114355231,
+        "recall": 0.4,
+        "iou_threshold": 0.5
+      }
+    }
+  },
+  "metrics": {
+    "total_samples": 299,
+    "samples": 299,
+    "matched": 36,
+    "unavailable": 0,
+    "predicted_samples": 299,
+    "exact_agreement": 0.12040133779264214,
+    "mae": 4.802675585284281,
+    "bias": 4.6755852842809364,
+    "false_empty_rate": 0.02727272727272727,
+    "false_occupied_rate": 0.6708860759493671,
+    "occupied_pairs": 220,
+    "empty_pairs": 79,
+    "coverage": 1.0,
+    "prediction_coverage": 1.0,
+    "by_condition": {
+      "day_rain": {
+        "total_samples": 100,
+        "samples": 100,
+        "matched": 2,
+        "unavailable": 0,
+        "predicted_samples": 100,
+        "exact_agreement": 0.02,
+        "mae": 7.93,
+        "bias": 7.93,
+        "false_empty_rate": 0.0,
+        "false_occupied_rate": null,
+        "occupied_pairs": 100,
+        "empty_pairs": 0,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      },
+      "night_snow": {
+        "total_samples": 99,
+        "samples": 99,
+        "matched": 34,
+        "unavailable": 0,
+        "predicted_samples": 99,
+        "exact_agreement": 0.3434343434343434,
+        "mae": 0.9696969696969697,
+        "bias": 0.7878787878787878,
+        "false_empty_rate": 0.24,
+        "false_occupied_rate": 0.6486486486486487,
+        "occupied_pairs": 25,
+        "empty_pairs": 74,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      },
+      "night_wet": {
+        "total_samples": 100,
+        "samples": 100,
+        "matched": 0,
+        "unavailable": 0,
+        "predicted_samples": 100,
+        "exact_agreement": 0.0,
+        "mae": 5.47,
+        "bias": 5.27,
+        "false_empty_rate": 0.0,
+        "false_occupied_rate": 1.0,
+        "occupied_pairs": 95,
+        "empty_pairs": 5,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      }
+    },
+    "by_count_band": {
+      "0": {
+        "total_samples": 79,
+        "samples": 79,
+        "matched": 26,
+        "unavailable": 0,
+        "predicted_samples": 79,
+        "exact_agreement": 0.3291139240506329,
+        "mae": 1.1139240506329113,
+        "bias": 1.1139240506329113,
+        "false_empty_rate": null,
+        "false_occupied_rate": 0.6708860759493671,
+        "occupied_pairs": 0,
+        "empty_pairs": 79,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      },
+      "1-2": {
+        "total_samples": 66,
+        "samples": 66,
+        "matched": 8,
+        "unavailable": 0,
+        "predicted_samples": 66,
+        "exact_agreement": 0.12121212121212122,
+        "mae": 2.727272727272727,
+        "bias": 2.4242424242424243,
+        "false_empty_rate": 0.09090909090909091,
+        "false_occupied_rate": null,
+        "occupied_pairs": 66,
+        "empty_pairs": 0,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      },
+      "3+": {
+        "total_samples": 154,
+        "samples": 154,
+        "matched": 2,
+        "unavailable": 0,
+        "predicted_samples": 154,
+        "exact_agreement": 0.012987012987012988,
+        "mae": 7.584415584415584,
+        "bias": 7.467532467532467,
+        "false_empty_rate": 0.0,
+        "false_occupied_rate": null,
+        "occupied_pairs": 154,
+        "empty_pairs": 0,
+        "coverage": 1.0,
+        "prediction_coverage": 1.0
+      }
+    }
+  },
+  "samples": [
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 246,
+      "source_time_s": 12.3,
+      "manual_count": 16,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 16.787499975180253
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 297,
+      "source_time_s": 14.85,
+      "manual_count": 12,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 17.17500001541339
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 389,
+      "source_time_s": 19.45,
+      "manual_count": 12,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 16.215000010561198
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 403,
+      "source_time_s": 20.15,
+      "manual_count": 12,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 19.60619998862967
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 461,
+      "source_time_s": 23.05,
+      "manual_count": 9,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 23.149300017394125
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 463,
+      "source_time_s": 23.15,
+      "manual_count": 9,
+      "predicted_count": 21,
+      "status": "valid",
+      "inference_ms": 30.134799977531657
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 620,
+      "source_time_s": 31.0,
+      "manual_count": 12,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 27.267999976174906
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 681,
+      "source_time_s": 34.05,
+      "manual_count": 10,
+      "predicted_count": 12,
+      "status": "valid",
+      "inference_ms": 22.664799995254725
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 799,
+      "source_time_s": 39.95,
+      "manual_count": 10,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 23.72640001703985
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 820,
+      "source_time_s": 41.0,
+      "manual_count": 12,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 23.342400003457442
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1001,
+      "source_time_s": 50.05,
+      "manual_count": 19,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 32.64520000084303
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1206,
+      "source_time_s": 60.3,
+      "manual_count": 17,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 25.59189999010414
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1310,
+      "source_time_s": 65.5,
+      "manual_count": 11,
+      "predicted_count": 13,
+      "status": "valid",
+      "inference_ms": 32.25480002583936
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1328,
+      "source_time_s": 66.4,
+      "manual_count": 11,
+      "predicted_count": 15,
+      "status": "valid",
+      "inference_ms": 29.504299978725612
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1397,
+      "source_time_s": 69.85,
+      "manual_count": 13,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 29.17260001413524
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1468,
+      "source_time_s": 73.4,
+      "manual_count": 18,
+      "predicted_count": 21,
+      "status": "valid",
+      "inference_ms": 27.207000006455928
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1604,
+      "source_time_s": 80.2,
+      "manual_count": 21,
+      "predicted_count": 23,
+      "status": "valid",
+      "inference_ms": 23.570600023958832
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1616,
+      "source_time_s": 80.8,
+      "manual_count": 21,
+      "predicted_count": 28,
+      "status": "valid",
+      "inference_ms": 30.387300008442253
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1692,
+      "source_time_s": 84.6,
+      "manual_count": 19,
+      "predicted_count": 21,
+      "status": "valid",
+      "inference_ms": 23.966800014022738
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1694,
+      "source_time_s": 84.7,
+      "manual_count": 19,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 26.046299986774102
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1699,
+      "source_time_s": 84.95,
+      "manual_count": 19,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 29.284400021424517
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1733,
+      "source_time_s": 86.65,
+      "manual_count": 18,
+      "predicted_count": 18,
+      "status": "valid",
+      "inference_ms": 28.1105000176467
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1810,
+      "source_time_s": 90.5,
+      "manual_count": 16,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 24.209099996369332
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1889,
+      "source_time_s": 94.45,
+      "manual_count": 15,
+      "predicted_count": 21,
+      "status": "valid",
+      "inference_ms": 37.131399993086234
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 1899,
+      "source_time_s": 94.95,
+      "manual_count": 15,
+      "predicted_count": 24,
+      "status": "valid",
+      "inference_ms": 35.06549997837283
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2111,
+      "source_time_s": 105.55,
+      "manual_count": 15,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 23.80620001349598
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2136,
+      "source_time_s": 106.8,
+      "manual_count": 15,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 22.22539999638684
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2178,
+      "source_time_s": 108.9,
+      "manual_count": 17,
+      "predicted_count": 25,
+      "status": "valid",
+      "inference_ms": 23.831900005461648
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2242,
+      "source_time_s": 112.1,
+      "manual_count": 16,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 38.47630001837388
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2250,
+      "source_time_s": 112.5,
+      "manual_count": 16,
+      "predicted_count": 27,
+      "status": "valid",
+      "inference_ms": 20.942000002833083
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2309,
+      "source_time_s": 115.45,
+      "manual_count": 17,
+      "predicted_count": 25,
+      "status": "valid",
+      "inference_ms": 29.59190000547096
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2432,
+      "source_time_s": 121.6,
+      "manual_count": 17,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 24.088800011668354
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2582,
+      "source_time_s": 129.1,
+      "manual_count": 18,
+      "predicted_count": 27,
+      "status": "valid",
+      "inference_ms": 25.315200007753447
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2585,
+      "source_time_s": 129.25,
+      "manual_count": 18,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 25.741799996467307
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2627,
+      "source_time_s": 131.35,
+      "manual_count": 20,
+      "predicted_count": 32,
+      "status": "valid",
+      "inference_ms": 23.65260000806302
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2671,
+      "source_time_s": 133.55,
+      "manual_count": 20,
+      "predicted_count": 28,
+      "status": "valid",
+      "inference_ms": 23.344699991866946
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2789,
+      "source_time_s": 139.45,
+      "manual_count": 20,
+      "predicted_count": 31,
+      "status": "valid",
+      "inference_ms": 24.651299987453967
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2896,
+      "source_time_s": 144.8,
+      "manual_count": 16,
+      "predicted_count": 23,
+      "status": "valid",
+      "inference_ms": 23.28170000691898
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2949,
+      "source_time_s": 147.45,
+      "manual_count": 14,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 20.790500013390556
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 2958,
+      "source_time_s": 147.9,
+      "manual_count": 14,
+      "predicted_count": 24,
+      "status": "valid",
+      "inference_ms": 21.076499979244545
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3017,
+      "source_time_s": 150.85,
+      "manual_count": 13,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 23.162900004535913
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3024,
+      "source_time_s": 151.2,
+      "manual_count": 13,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 21.834999992279336
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3032,
+      "source_time_s": 151.6,
+      "manual_count": 13,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 23.62999998149462
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3041,
+      "source_time_s": 152.05,
+      "manual_count": 13,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 21.78430001367815
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3064,
+      "source_time_s": 153.2,
+      "manual_count": 14,
+      "predicted_count": 21,
+      "status": "valid",
+      "inference_ms": 21.091700007673353
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3105,
+      "source_time_s": 155.25,
+      "manual_count": 13,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 21.927299996605143
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3224,
+      "source_time_s": 161.2,
+      "manual_count": 11,
+      "predicted_count": 18,
+      "status": "valid",
+      "inference_ms": 20.60630000778474
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3251,
+      "source_time_s": 162.55,
+      "manual_count": 10,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 21.636699995724484
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3314,
+      "source_time_s": 165.7,
+      "manual_count": 12,
+      "predicted_count": 23,
+      "status": "valid",
+      "inference_ms": 22.450500022387132
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3409,
+      "source_time_s": 170.45,
+      "manual_count": 11,
+      "predicted_count": 23,
+      "status": "valid",
+      "inference_ms": 23.700299992924556
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3417,
+      "source_time_s": 170.85,
+      "manual_count": 11,
+      "predicted_count": 23,
+      "status": "valid",
+      "inference_ms": 23.348299990175292
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3419,
+      "source_time_s": 170.95,
+      "manual_count": 11,
+      "predicted_count": 24,
+      "status": "valid",
+      "inference_ms": 21.165700018173084
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3501,
+      "source_time_s": 175.05,
+      "manual_count": 8,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 21.000800014007837
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3513,
+      "source_time_s": 175.65,
+      "manual_count": 8,
+      "predicted_count": 18,
+      "status": "valid",
+      "inference_ms": 28.090799984056503
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3593,
+      "source_time_s": 179.65,
+      "manual_count": 9,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 20.619799994165078
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3672,
+      "source_time_s": 183.6,
+      "manual_count": 7,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 20.425800001248717
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3719,
+      "source_time_s": 185.95,
+      "manual_count": 7,
+      "predicted_count": 15,
+      "status": "valid",
+      "inference_ms": 24.58699999260716
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3725,
+      "source_time_s": 186.25,
+      "manual_count": 7,
+      "predicted_count": 17,
+      "status": "valid",
+      "inference_ms": 20.344599994132295
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 3776,
+      "source_time_s": 188.8,
+      "manual_count": 6,
+      "predicted_count": 15,
+      "status": "valid",
+      "inference_ms": 19.74669998162426
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4026,
+      "source_time_s": 201.3,
+      "manual_count": 7,
+      "predicted_count": 15,
+      "status": "valid",
+      "inference_ms": 19.867700000759214
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4127,
+      "source_time_s": 206.35,
+      "manual_count": 9,
+      "predicted_count": 17,
+      "status": "valid",
+      "inference_ms": 19.63719999184832
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4142,
+      "source_time_s": 207.1,
+      "manual_count": 9,
+      "predicted_count": 17,
+      "status": "valid",
+      "inference_ms": 19.743399985600263
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4276,
+      "source_time_s": 213.8,
+      "manual_count": 10,
+      "predicted_count": 17,
+      "status": "valid",
+      "inference_ms": 20.265099999960512
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4307,
+      "source_time_s": 215.35,
+      "manual_count": 10,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 20.259699987946078
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4311,
+      "source_time_s": 215.55,
+      "manual_count": 10,
+      "predicted_count": 17,
+      "status": "valid",
+      "inference_ms": 21.26229999703355
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4316,
+      "source_time_s": 215.8,
+      "manual_count": 10,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 21.77809999557212
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4352,
+      "source_time_s": 217.6,
+      "manual_count": 8,
+      "predicted_count": 18,
+      "status": "valid",
+      "inference_ms": 22.225200023967773
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4417,
+      "source_time_s": 220.85,
+      "manual_count": 8,
+      "predicted_count": 15,
+      "status": "valid",
+      "inference_ms": 24.8554999998305
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4419,
+      "source_time_s": 220.95,
+      "manual_count": 9,
+      "predicted_count": 12,
+      "status": "valid",
+      "inference_ms": 22.51440001418814
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4441,
+      "source_time_s": 222.05,
+      "manual_count": 8,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 23.075200006132945
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4461,
+      "source_time_s": 223.05,
+      "manual_count": 9,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 20.923800009768456
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4494,
+      "source_time_s": 224.7,
+      "manual_count": 13,
+      "predicted_count": 23,
+      "status": "valid",
+      "inference_ms": 21.044400025857612
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4517,
+      "source_time_s": 225.85,
+      "manual_count": 13,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 21.943700005067512
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4562,
+      "source_time_s": 228.1,
+      "manual_count": 15,
+      "predicted_count": 27,
+      "status": "valid",
+      "inference_ms": 21.753299981355667
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4586,
+      "source_time_s": 229.3,
+      "manual_count": 14,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 22.112499980721623
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4694,
+      "source_time_s": 234.7,
+      "manual_count": 15,
+      "predicted_count": 23,
+      "status": "valid",
+      "inference_ms": 20.939000009093434
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4725,
+      "source_time_s": 236.25,
+      "manual_count": 15,
+      "predicted_count": 25,
+      "status": "valid",
+      "inference_ms": 22.214399999938905
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4731,
+      "source_time_s": 236.55,
+      "manual_count": 17,
+      "predicted_count": 28,
+      "status": "valid",
+      "inference_ms": 21.591199998511
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4758,
+      "source_time_s": 237.9,
+      "manual_count": 15,
+      "predicted_count": 24,
+      "status": "valid",
+      "inference_ms": 20.768299989867955
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4796,
+      "source_time_s": 239.8,
+      "manual_count": 16,
+      "predicted_count": 31,
+      "status": "valid",
+      "inference_ms": 21.849900018423796
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 4840,
+      "source_time_s": 242.0,
+      "manual_count": 14,
+      "predicted_count": 17,
+      "status": "valid",
+      "inference_ms": 26.436599990120158
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5137,
+      "source_time_s": 256.85,
+      "manual_count": 17,
+      "predicted_count": 29,
+      "status": "valid",
+      "inference_ms": 23.18730001570657
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5157,
+      "source_time_s": 257.85,
+      "manual_count": 17,
+      "predicted_count": 35,
+      "status": "valid",
+      "inference_ms": 23.95619999151677
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5199,
+      "source_time_s": 259.95,
+      "manual_count": 17,
+      "predicted_count": 25,
+      "status": "valid",
+      "inference_ms": 22.435500024585053
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5270,
+      "source_time_s": 263.5,
+      "manual_count": 17,
+      "predicted_count": 24,
+      "status": "valid",
+      "inference_ms": 22.461599990492687
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5295,
+      "source_time_s": 264.75,
+      "manual_count": 17,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 22.549100016476586
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5311,
+      "source_time_s": 265.55,
+      "manual_count": 18,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 22.085600008722395
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5459,
+      "source_time_s": 272.95,
+      "manual_count": 17,
+      "predicted_count": 25,
+      "status": "valid",
+      "inference_ms": 21.687100001145154
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5546,
+      "source_time_s": 277.3,
+      "manual_count": 17,
+      "predicted_count": 26,
+      "status": "valid",
+      "inference_ms": 23.693399998592213
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5561,
+      "source_time_s": 278.05,
+      "manual_count": 17,
+      "predicted_count": 19,
+      "status": "valid",
+      "inference_ms": 21.24459997867234
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5600,
+      "source_time_s": 280.0,
+      "manual_count": 18,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 21.538799977861345
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5615,
+      "source_time_s": 280.75,
+      "manual_count": 16,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 21.09930000733584
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5734,
+      "source_time_s": 286.7,
+      "manual_count": 20,
+      "predicted_count": 30,
+      "status": "valid",
+      "inference_ms": 23.088499990990385
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5743,
+      "source_time_s": 287.15,
+      "manual_count": 21,
+      "predicted_count": 32,
+      "status": "valid",
+      "inference_ms": 24.37249998911284
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5772,
+      "source_time_s": 288.6,
+      "manual_count": 20,
+      "predicted_count": 27,
+      "status": "valid",
+      "inference_ms": 22.985299990978092
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5816,
+      "source_time_s": 290.8,
+      "manual_count": 21,
+      "predicted_count": 30,
+      "status": "valid",
+      "inference_ms": 23.36769999237731
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5847,
+      "source_time_s": 292.35,
+      "manual_count": 21,
+      "predicted_count": 29,
+      "status": "valid",
+      "inference_ms": 22.940900002140552
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5857,
+      "source_time_s": 292.85,
+      "manual_count": 21,
+      "predicted_count": 31,
+      "status": "valid",
+      "inference_ms": 22.81240001320839
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5915,
+      "source_time_s": 295.75,
+      "manual_count": 21,
+      "predicted_count": 32,
+      "status": "valid",
+      "inference_ms": 22.859299991978332
+    },
+    {
+      "scene": "Hadsundvej-2",
+      "condition": "day_rain",
+      "frame_index": 5996,
+      "source_time_s": 299.8,
+      "manual_count": 20,
+      "predicted_count": 27,
+      "status": "valid",
+      "inference_ms": 22.971200000029057
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 13,
+      "source_time_s": 0.65,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 22.907900012796745
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 18,
+      "source_time_s": 0.9,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 22.12350000627339
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 39,
+      "source_time_s": 1.95,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "degraded",
+      "inference_ms": 20.750900002894923
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 68,
+      "source_time_s": 3.4,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "degraded",
+      "inference_ms": 17.089199973270297
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 223,
+      "source_time_s": 11.15,
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "degraded",
+      "inference_ms": 18.147199996747077
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 246,
+      "source_time_s": 12.3,
+      "manual_count": 2,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 15.959299984388053
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 258,
+      "source_time_s": 12.9,
+      "manual_count": 2,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 16.432099975645542
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 274,
+      "source_time_s": 13.7,
+      "manual_count": 1,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 17.28609998826869
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 296,
+      "source_time_s": 14.8,
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 16.8783999979496
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 485,
+      "source_time_s": 24.25,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 16.504300001543015
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 678,
+      "source_time_s": 33.9,
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "degraded",
+      "inference_ms": 15.932000009343028
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 718,
+      "source_time_s": 35.9,
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "degraded",
+      "inference_ms": 16.214999981457368
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 721,
+      "source_time_s": 36.05,
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "degraded",
+      "inference_ms": 20.73079999536276
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 811,
+      "source_time_s": 40.55,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 17.709300009300932
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 832,
+      "source_time_s": 41.6,
+      "manual_count": 1,
+      "predicted_count": 2,
+      "status": "degraded",
+      "inference_ms": 17.25050000823103
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 849,
+      "source_time_s": 42.45,
+      "manual_count": 1,
+      "predicted_count": 2,
+      "status": "degraded",
+      "inference_ms": 18.47709997673519
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 933,
+      "source_time_s": 46.65,
+      "manual_count": 1,
+      "predicted_count": 2,
+      "status": "degraded",
+      "inference_ms": 15.741500013973564
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 978,
+      "source_time_s": 48.9,
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 15.665900020394474
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1082,
+      "source_time_s": 54.1,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 18.852600012905896
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1095,
+      "source_time_s": 54.75,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 16.678699990734458
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1157,
+      "source_time_s": 57.85,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.517500004032627
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1200,
+      "source_time_s": 60.0,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 16.227600019192323
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1230,
+      "source_time_s": 61.5,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.83409998845309
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1254,
+      "source_time_s": 62.7,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 16.004000004613772
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1282,
+      "source_time_s": 64.1,
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "degraded",
+      "inference_ms": 17.738700000336394
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1332,
+      "source_time_s": 66.6,
+      "manual_count": 1,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 16.683499998180196
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1423,
+      "source_time_s": 71.15,
+      "manual_count": 1,
+      "predicted_count": 0,
+      "status": "degraded",
+      "inference_ms": 15.880300023127347
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1514,
+      "source_time_s": 75.7,
+      "manual_count": 1,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 17.18669998808764
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1525,
+      "source_time_s": 76.25,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.12609999231063
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1527,
+      "source_time_s": 76.35,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 16.23670000117272
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1804,
+      "source_time_s": 90.2,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.028600006597117
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1839,
+      "source_time_s": 91.95,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 16.197799996007234
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1924,
+      "source_time_s": 96.2,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 20.468400005484
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 1963,
+      "source_time_s": 98.15,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 16.185600019525737
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2048,
+      "source_time_s": 102.4,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 16.17329998407513
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2402,
+      "source_time_s": 120.1,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 29.57579999929294
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2411,
+      "source_time_s": 120.55,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.431500018574297
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2432,
+      "source_time_s": 121.6,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 18.835400027455762
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2597,
+      "source_time_s": 129.85,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 19.825700001092628
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2598,
+      "source_time_s": 129.9,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 24.780600011581555
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2652,
+      "source_time_s": 132.6,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 25.56510001886636
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2741,
+      "source_time_s": 137.05,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 19.591799995396286
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2815,
+      "source_time_s": 140.75,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.33489999989979
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 2848,
+      "source_time_s": 142.4,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 21.281399996951222
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3003,
+      "source_time_s": 150.15,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.870400002924725
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3131,
+      "source_time_s": 156.55,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 19.074999989243224
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3181,
+      "source_time_s": 159.05,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 16.5065000182949
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3374,
+      "source_time_s": 168.7,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 16.93479999084957
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3446,
+      "source_time_s": 172.3,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 20.583200006512925
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3450,
+      "source_time_s": 172.5,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 21.5885000070557
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3493,
+      "source_time_s": 174.65,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 19.33219999773428
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3630,
+      "source_time_s": 181.5,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.126199982361868
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3649,
+      "source_time_s": 182.45,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 19.056699995417148
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3726,
+      "source_time_s": 186.3,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 17.613700008951128
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3761,
+      "source_time_s": 188.05,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 18.71400000527501
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3796,
+      "source_time_s": 189.8,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.239300010260195
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3799,
+      "source_time_s": 189.95,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 20.14090001466684
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3824,
+      "source_time_s": 191.2,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.797500011511147
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3838,
+      "source_time_s": 191.9,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 17.453700012993068
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3915,
+      "source_time_s": 195.75,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 18.404900009045377
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3942,
+      "source_time_s": 197.1,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 16.929099976550788
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3950,
+      "source_time_s": 197.5,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 17.227699980139732
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 3966,
+      "source_time_s": 198.3,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.076099979225546
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4081,
+      "source_time_s": 204.05,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 17.116100003477186
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4165,
+      "source_time_s": 208.25,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.47259998228401
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4174,
+      "source_time_s": 208.7,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 18.52770001278259
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4238,
+      "source_time_s": 211.9,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 18.970800010720268
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4277,
+      "source_time_s": 213.85,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 24.428000004263595
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4356,
+      "source_time_s": 217.8,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 17.72279999568127
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4403,
+      "source_time_s": 220.15,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 17.40750001044944
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4501,
+      "source_time_s": 225.05,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 16.634500003419816
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4546,
+      "source_time_s": 227.3,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 16.995899990433827
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4550,
+      "source_time_s": 227.5,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 16.89759999862872
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4613,
+      "source_time_s": 230.65,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 21.286500006681308
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4713,
+      "source_time_s": 235.65,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 17.256999999517575
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4769,
+      "source_time_s": 238.45,
+      "manual_count": 0,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 20.672000013291836
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4786,
+      "source_time_s": 239.3,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 23.836700012907386
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 4905,
+      "source_time_s": 245.25,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 24.74419999634847
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5004,
+      "source_time_s": 250.2,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 20.96019999589771
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5158,
+      "source_time_s": 257.9,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 20.91569997719489
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5170,
+      "source_time_s": 258.5,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 20.294499990995973
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5201,
+      "source_time_s": 260.05,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.164900015108287
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5211,
+      "source_time_s": 260.55,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.867400009185076
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5213,
+      "source_time_s": 260.65,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.72720000008121
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5358,
+      "source_time_s": 267.9,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 17.895800003316253
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5415,
+      "source_time_s": 270.75,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 17.61919999262318
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5457,
+      "source_time_s": 272.85,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 16.750599985243753
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5468,
+      "source_time_s": 273.4,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 19.279200001619756
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5473,
+      "source_time_s": 273.65,
+      "manual_count": 0,
+      "predicted_count": 0,
+      "status": "valid",
+      "inference_ms": 19.41779998014681
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5572,
+      "source_time_s": 278.6,
+      "manual_count": 0,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.14510000986047
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5665,
+      "source_time_s": 283.25,
+      "manual_count": 1,
+      "predicted_count": 2,
+      "status": "degraded",
+      "inference_ms": 17.293699987931177
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5687,
+      "source_time_s": 284.35,
+      "manual_count": 1,
+      "predicted_count": 3,
+      "status": "degraded",
+      "inference_ms": 17.06499999272637
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5714,
+      "source_time_s": 285.7,
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "degraded",
+      "inference_ms": 17.89640000788495
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5760,
+      "source_time_s": 288.0,
+      "manual_count": 1,
+      "predicted_count": 2,
+      "status": "degraded",
+      "inference_ms": 19.156199996359646
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5786,
+      "source_time_s": 289.3,
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "degraded",
+      "inference_ms": 22.09680000669323
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5792,
+      "source_time_s": 289.6,
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "degraded",
+      "inference_ms": 21.62830001907423
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5871,
+      "source_time_s": 293.55,
+      "manual_count": 2,
+      "predicted_count": 1,
+      "status": "degraded",
+      "inference_ms": 20.514799980446696
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5934,
+      "source_time_s": 296.7,
+      "manual_count": 1,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 19.441899989033118
+    },
+    {
+      "scene": "Egensevej-5",
+      "condition": "night_snow",
+      "frame_index": 5971,
+      "source_time_s": 298.55,
+      "manual_count": 1,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 18.217100005131215
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 161,
+      "source_time_s": 8.05,
+      "manual_count": 1,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 19.70380000420846
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 168,
+      "source_time_s": 8.4,
+      "manual_count": 1,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 19.78659999440424
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 183,
+      "source_time_s": 9.15,
+      "manual_count": 1,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 20.45819998602383
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 251,
+      "source_time_s": 12.55,
+      "manual_count": 1,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 19.450799998594448
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 273,
+      "source_time_s": 13.65,
+      "manual_count": 1,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 20.564999984344468
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 294,
+      "source_time_s": 14.7,
+      "manual_count": 1,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 20.094500010600314
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 311,
+      "source_time_s": 15.55,
+      "manual_count": 1,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 20.596800022758543
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 326,
+      "source_time_s": 16.3,
+      "manual_count": 1,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 18.33029999397695
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 353,
+      "source_time_s": 17.65,
+      "manual_count": 2,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 18.19719999912195
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 419,
+      "source_time_s": 20.95,
+      "manual_count": 2,
+      "predicted_count": 7,
+      "status": "valid",
+      "inference_ms": 36.48929999326356
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 482,
+      "source_time_s": 24.1,
+      "manual_count": 2,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 21.612500015180558
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 709,
+      "source_time_s": 35.45,
+      "manual_count": 2,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 19.105599989416078
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 838,
+      "source_time_s": 41.9,
+      "manual_count": 5,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 19.1097000206355
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 893,
+      "source_time_s": 44.65,
+      "manual_count": 7,
+      "predicted_count": 18,
+      "status": "valid",
+      "inference_ms": 18.29050001106225
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 923,
+      "source_time_s": 46.15,
+      "manual_count": 7,
+      "predicted_count": 15,
+      "status": "valid",
+      "inference_ms": 19.289499992737547
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 939,
+      "source_time_s": 46.95,
+      "manual_count": 7,
+      "predicted_count": 22,
+      "status": "valid",
+      "inference_ms": 18.776799988700077
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1021,
+      "source_time_s": 51.05,
+      "manual_count": 6,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 20.394899998791516
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1060,
+      "source_time_s": 53.0,
+      "manual_count": 3,
+      "predicted_count": 12,
+      "status": "valid",
+      "inference_ms": 19.569800002500415
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1083,
+      "source_time_s": 54.15,
+      "manual_count": 3,
+      "predicted_count": 10,
+      "status": "valid",
+      "inference_ms": 20.573900023009628
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1085,
+      "source_time_s": 54.25,
+      "manual_count": 3,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 22.785000008298084
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1091,
+      "source_time_s": 54.55,
+      "manual_count": 3,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 23.472000000765547
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1145,
+      "source_time_s": 57.25,
+      "manual_count": 1,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 18.676199979381636
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1159,
+      "source_time_s": 57.95,
+      "manual_count": 1,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 23.304699978325516
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1329,
+      "source_time_s": 66.45,
+      "manual_count": 1,
+      "predicted_count": 8,
+      "status": "valid",
+      "inference_ms": 20.698499982245266
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1499,
+      "source_time_s": 74.95,
+      "manual_count": 1,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 18.592400010675192
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1600,
+      "source_time_s": 80.0,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 20.58520002174191
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1613,
+      "source_time_s": 80.65,
+      "manual_count": 0,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 18.151600001147017
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1682,
+      "source_time_s": 84.1,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 21.40450000297278
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1699,
+      "source_time_s": 84.95,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 19.731399981537834
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1700,
+      "source_time_s": 85.0,
+      "manual_count": 0,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 17.349200003081933
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1757,
+      "source_time_s": 87.85,
+      "manual_count": 2,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 17.75719999568537
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1785,
+      "source_time_s": 89.25,
+      "manual_count": 2,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 18.7554000003729
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1814,
+      "source_time_s": 90.7,
+      "manual_count": 2,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 18.757499987259507
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 1835,
+      "source_time_s": 91.75,
+      "manual_count": 2,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 18.199200014350936
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2105,
+      "source_time_s": 105.25,
+      "manual_count": 5,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 18.900499999290332
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2156,
+      "source_time_s": 107.8,
+      "manual_count": 6,
+      "predicted_count": 13,
+      "status": "valid",
+      "inference_ms": 19.62979999370873
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2202,
+      "source_time_s": 110.1,
+      "manual_count": 4,
+      "predicted_count": 11,
+      "status": "valid",
+      "inference_ms": 25.00210001016967
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2204,
+      "source_time_s": 110.2,
+      "manual_count": 4,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 23.023299989290535
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2222,
+      "source_time_s": 111.1,
+      "manual_count": 4,
+      "predicted_count": 12,
+      "status": "valid",
+      "inference_ms": 24.629499996080995
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2257,
+      "source_time_s": 112.85,
+      "manual_count": 3,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 19.991999986814335
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2323,
+      "source_time_s": 116.15,
+      "manual_count": 2,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 21.67859999462962
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2345,
+      "source_time_s": 117.25,
+      "manual_count": 1,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 20.53050001268275
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2385,
+      "source_time_s": 119.25,
+      "manual_count": 2,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 20.09469998301938
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2403,
+      "source_time_s": 120.15,
+      "manual_count": 3,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 20.31710001756437
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2470,
+      "source_time_s": 123.5,
+      "manual_count": 3,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 23.06690000114031
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2504,
+      "source_time_s": 125.2,
+      "manual_count": 2,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 20.033300010254607
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2508,
+      "source_time_s": 125.4,
+      "manual_count": 2,
+      "predicted_count": 8,
+      "status": "valid",
+      "inference_ms": 19.905900000594556
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2535,
+      "source_time_s": 126.75,
+      "manual_count": 2,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 20.43140001478605
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2573,
+      "source_time_s": 128.65,
+      "manual_count": 1,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 21.65059998515062
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2576,
+      "source_time_s": 128.8,
+      "manual_count": 1,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 22.821899998234585
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2654,
+      "source_time_s": 132.7,
+      "manual_count": 2,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 20.057499990798533
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2702,
+      "source_time_s": 135.1,
+      "manual_count": 2,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 20.27010000892915
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2727,
+      "source_time_s": 136.35,
+      "manual_count": 2,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 20.597800001269206
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2799,
+      "source_time_s": 139.95,
+      "manual_count": 3,
+      "predicted_count": 8,
+      "status": "valid",
+      "inference_ms": 18.252600013511255
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2837,
+      "source_time_s": 141.85,
+      "manual_count": 5,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 18.236499978229403
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2896,
+      "source_time_s": 144.8,
+      "manual_count": 4,
+      "predicted_count": 10,
+      "status": "valid",
+      "inference_ms": 18.999299994902685
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2976,
+      "source_time_s": 148.8,
+      "manual_count": 3,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 18.719100015005097
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 2990,
+      "source_time_s": 149.5,
+      "manual_count": 2,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 18.38979998137802
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3036,
+      "source_time_s": 151.8,
+      "manual_count": 3,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 19.487199984723702
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3247,
+      "source_time_s": 162.35,
+      "manual_count": 5,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 20.413999998709187
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3248,
+      "source_time_s": 162.4,
+      "manual_count": 5,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 18.746100016869605
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3279,
+      "source_time_s": 163.95,
+      "manual_count": 5,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 20.09519998682663
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3381,
+      "source_time_s": 169.05,
+      "manual_count": 7,
+      "predicted_count": 17,
+      "status": "valid",
+      "inference_ms": 19.67149999109097
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3391,
+      "source_time_s": 169.55,
+      "manual_count": 7,
+      "predicted_count": 29,
+      "status": "valid",
+      "inference_ms": 18.604000011691824
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3530,
+      "source_time_s": 176.5,
+      "manual_count": 7,
+      "predicted_count": 18,
+      "status": "valid",
+      "inference_ms": 32.231399993179366
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3531,
+      "source_time_s": 176.55,
+      "manual_count": 8,
+      "predicted_count": 20,
+      "status": "valid",
+      "inference_ms": 24.235099990619346
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3560,
+      "source_time_s": 178.0,
+      "manual_count": 8,
+      "predicted_count": 17,
+      "status": "valid",
+      "inference_ms": 28.208700008690357
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3810,
+      "source_time_s": 190.5,
+      "manual_count": 3,
+      "predicted_count": 10,
+      "status": "valid",
+      "inference_ms": 18.4208000137005
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3878,
+      "source_time_s": 193.9,
+      "manual_count": 4,
+      "predicted_count": 10,
+      "status": "valid",
+      "inference_ms": 26.41550000407733
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3905,
+      "source_time_s": 195.25,
+      "manual_count": 4,
+      "predicted_count": 13,
+      "status": "valid",
+      "inference_ms": 25.13529997668229
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3939,
+      "source_time_s": 196.95,
+      "manual_count": 3,
+      "predicted_count": 10,
+      "status": "valid",
+      "inference_ms": 19.819000008283183
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 3986,
+      "source_time_s": 199.3,
+      "manual_count": 2,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 20.645000011427328
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4201,
+      "source_time_s": 210.05,
+      "manual_count": 4,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 25.235099979909137
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4249,
+      "source_time_s": 212.45,
+      "manual_count": 4,
+      "predicted_count": 10,
+      "status": "valid",
+      "inference_ms": 22.75599999120459
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4294,
+      "source_time_s": 214.7,
+      "manual_count": 4,
+      "predicted_count": 16,
+      "status": "valid",
+      "inference_ms": 29.339800006709993
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4407,
+      "source_time_s": 220.35,
+      "manual_count": 1,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 18.014500004937872
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4510,
+      "source_time_s": 225.5,
+      "manual_count": 1,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 21.611200005281717
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4549,
+      "source_time_s": 227.45,
+      "manual_count": 1,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 34.17170001193881
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4603,
+      "source_time_s": 230.15,
+      "manual_count": 1,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 23.939299979247153
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4688,
+      "source_time_s": 234.4,
+      "manual_count": 3,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 28.488900017691776
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4695,
+      "source_time_s": 234.75,
+      "manual_count": 3,
+      "predicted_count": 7,
+      "status": "valid",
+      "inference_ms": 19.836399995256215
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4893,
+      "source_time_s": 244.65,
+      "manual_count": 3,
+      "predicted_count": 5,
+      "status": "valid",
+      "inference_ms": 18.83099999395199
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 4920,
+      "source_time_s": 246.0,
+      "manual_count": 5,
+      "predicted_count": 11,
+      "status": "valid",
+      "inference_ms": 21.319799998309463
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5048,
+      "source_time_s": 252.4,
+      "manual_count": 3,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 21.940599981462583
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5052,
+      "source_time_s": 252.6,
+      "manual_count": 3,
+      "predicted_count": 11,
+      "status": "valid",
+      "inference_ms": 18.578700022771955
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5142,
+      "source_time_s": 257.1,
+      "manual_count": 3,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 21.953299990855157
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5157,
+      "source_time_s": 257.85,
+      "manual_count": 2,
+      "predicted_count": 6,
+      "status": "valid",
+      "inference_ms": 20.081199996639043
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5176,
+      "source_time_s": 258.8,
+      "manual_count": 2,
+      "predicted_count": 8,
+      "status": "valid",
+      "inference_ms": 26.2642000161577
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5308,
+      "source_time_s": 265.4,
+      "manual_count": 2,
+      "predicted_count": 8,
+      "status": "valid",
+      "inference_ms": 18.55710000381805
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5481,
+      "source_time_s": 274.05,
+      "manual_count": 2,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 26.65269997669384
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5549,
+      "source_time_s": 277.45,
+      "manual_count": 3,
+      "predicted_count": 1,
+      "status": "valid",
+      "inference_ms": 19.85469998908229
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5584,
+      "source_time_s": 279.2,
+      "manual_count": 3,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 19.537100015440956
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5606,
+      "source_time_s": 280.3,
+      "manual_count": 3,
+      "predicted_count": 4,
+      "status": "valid",
+      "inference_ms": 17.045600019628182
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5615,
+      "source_time_s": 280.75,
+      "manual_count": 3,
+      "predicted_count": 8,
+      "status": "valid",
+      "inference_ms": 18.417200015392154
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5682,
+      "source_time_s": 284.1,
+      "manual_count": 3,
+      "predicted_count": 7,
+      "status": "valid",
+      "inference_ms": 20.262899983208627
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5788,
+      "source_time_s": 289.4,
+      "manual_count": 4,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 18.084100011037663
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5791,
+      "source_time_s": 289.55,
+      "manual_count": 4,
+      "predicted_count": 2,
+      "status": "valid",
+      "inference_ms": 19.21800000127405
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5804,
+      "source_time_s": 290.2,
+      "manual_count": 4,
+      "predicted_count": 3,
+      "status": "valid",
+      "inference_ms": 18.673600017791614
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5895,
+      "source_time_s": 294.75,
+      "manual_count": 5,
+      "predicted_count": 11,
+      "status": "valid",
+      "inference_ms": 17.459599999710917
+    },
+    {
+      "scene": "Ringvej-1",
+      "condition": "night_wet",
+      "frame_index": 5903,
+      "source_time_s": 295.15,
+      "manual_count": 5,
+      "predicted_count": 9,
+      "status": "valid",
+      "inference_ms": 17.31120000476949
+    }
+  ],
+  "box_metrics": {
+    "reference": 1746,
+    "predicted": 3144,
+    "matched": 1231,
+    "precision": 0.39153944020356235,
+    "recall": 0.7050400916380298,
+    "iou_threshold": 0.5
+  }
+}

@@ -5,3 +5,11 @@ data/raw/
 .vscode/
 # Modelos de PyTorch
 *.pt
+*.onnx
+*.engine
+.pytest_cache/
+.ruff_cache/
+output/
+runtime/
+*.log
+.playwright-cli/
