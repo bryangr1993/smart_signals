@@ -26,7 +26,7 @@ powershell -ExecutionPolicy Bypass -File scripts/install.ps1 -Device cuda
 
 El instalador crea un entorno aislado, instala versiones fijadas y descarga los pesos oficiales YOLOv8n y YOLOv8s. Instalar y descargar requieren internet, analizar material local ya preparado no. Las sesiones nuevas usan YOLOv8s a 960 y análisis del cuadro completo; el recorte contextual es opcional y YOLOv8n a 640 queda como alternativa de menor consumo. Los perfiles conservan sus ajustes propios.
 
-El código original está en el historial de Git (`af8e1c9`). El desarrollo actual está en `feature/presence-studio`. Para clonar con el ejemplo original:
+El código original está en el historial de Git (`af8e1c9`). Para clonar la aplicación y descargar el video de ejemplo:
 
 ```powershell
 git clone https://github.com/bryangr1993/smart_signals.git
@@ -34,7 +34,7 @@ cd smart_signals
 git lfs pull
 ```
 
-Esta rama local aún debe publicarse para que un clon remoto incluya la aplicación nueva.
+Después de clonar, ejecute el instalador indicado arriba. Los modelos y datasets adicionales se descargan por separado; sus fuentes y procedimientos están documentados en este repositorio.
 
 ## Estado comprobado al 11 de noviembre de 2026
 
